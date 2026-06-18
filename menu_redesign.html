@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Menu | Crema &amp; Co. Artisanal Roasters</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#ffdbcc",
+                      "on-surface": "#1e1b1a",
+                      "primary-container": "#5c4033",
+                      "on-primary-fixed-variant": "#5c4033",
+                      "on-secondary-fixed": "#271813",
+                      "surface-container-low": "#faf2ef",
+                      "inverse-surface": "#33302e",
+                      "inverse-primary": "#e6bead",
+                      "on-primary-container": "#d3ac9c",
+                      "surface-variant": "#e9e1de",
+                      "on-error": "#ffffff",
+                      "on-surface-variant": "#504440",
+                      "tertiary-fixed-dim": "#ffb68c",
+                      "tertiary": "#522200",
+                      "surface-container": "#f4ecea",
+                      "secondary": "#6f5a53",
+                      "secondary-container": "#f9dcd3",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#dcc1b8",
+                      "surface-dim": "#e0d8d6",
+                      "on-tertiary-container": "#f3a271",
+                      "on-background": "#1e1b1a",
+                      "surface-tint": "#765749",
+                      "surface-container-highest": "#e9e1de",
+                      "surface-bright": "#fff8f6",
+                      "outline-variant": "#d4c3bd",
+                      "on-tertiary-fixed": "#321200",
+                      "on-primary": "#ffffff",
+                      "tertiary-container": "#70370e",
+                      "on-secondary": "#ffffff",
+                      "surface": "#fff8f6",
+                      "on-tertiary-fixed-variant": "#70370e",
+                      "inverse-on-surface": "#f7efec",
+                      "tertiary-fixed": "#ffdbc9",
+                      "secondary-fixed": "#f9dcd3",
+                      "background": "#fff8f6",
+                      "on-primary-fixed": "#2c160b",
+                      "on-error-container": "#93000a",
+                      "primary": "#432a1e",
+                      "on-secondary-container": "#756058",
+                      "on-secondary-fixed-variant": "#56423c",
+                      "outline": "#82746f",
+                      "surface-container-high": "#efe6e4",
+                      "primary-fixed-dim": "#e6bead",
+                      "on-tertiary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "lg": "48px",
+                      "sm": "12px",
+                      "margin-mobile": "16px",
+                      "xl": "80px",
+                      "base": "8px",
+                      "xs": "4px",
+                      "md": "24px",
+                      "container-max": "1280px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Playfair Display"],
+                      "caption": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Playfair Display"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Playfair Display"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F8F5F0; /* Tonal background from Style Guidance */
+            color: #1e1b1a;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        .filter-chip.active {
+            border-bottom: 2px solid #432a1e;
+            color: #432a1e;
+            font-weight: 600;
+        }
+        .item-card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .item-card:hover {
+            transform: translateY(-4px);
+        }
+        .item-card img {
+            filter: sepia(0.1) contrast(1.05);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-fixed selection:text-primary">
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant/30">
+<nav class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
+<div class="font-display-lg text-headline-md text-primary tracking-tight">Crema &amp; Co.</div>
+<div class="hidden md:flex gap-md items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Our Story</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">The Roastery</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Menu</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Brew Guides</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Subscription</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container-low rounded-full transition-all">search</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:opacity-90 transition-all">Order Now</button>
+</div>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-xl">
+<!-- Page Header -->
+<section class="mb-xl text-center">
+<span class="font-label-md text-label-md text-on-primary-container tracking-widest uppercase mb-4 block">Artisanal Selection</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Our Menu</h1>
+<p class="max-w-2xl mx-auto text-on-surface-variant font-body-lg text-body-lg leading-relaxed">
+                A meticulously curated collection of rare single-origins, classic espresso preparations, and handcrafted pastries baked fresh every morning in our roastery kitchen.
+            </p>
+</section>
+<!-- Category Filter -->
+<nav class="flex justify-center gap-md mb-lg border-b border-outline-variant/20 pb-4">
+<button class="filter-chip active font-label-md text-label-md px-4 py-2 transition-all" onclick="filterItems('all')">All Items</button>
+<button class="filter-chip text-on-surface-variant font-label-md text-label-md px-4 py-2 hover:text-primary transition-all" onclick="filterItems('hot-coffee')">Hot Coffee</button>
+<button class="filter-chip text-on-surface-variant font-label-md text-label-md px-4 py-2 hover:text-primary transition-all" onclick="filterItems('cold-coffee')">Cold Coffee</button>
+<button class="filter-chip text-on-surface-variant font-label-md text-label-md px-4 py-2 hover:text-primary transition-all" onclick="filterItems('pastries')">Pastries</button>
+</nav>
+<!-- Menu Grid -->
+<div class="menu-grid" id="menu-grid">
+<!-- Item 1: Hot Coffee -->
+<div class="item-card bg-surface-container-lowest border border-outline-variant/10 group cursor-pointer" data-category="hot-coffee">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, high-end editorial photograph of a perfectly poured latte in a matte ceramic cup. The latte art is a detailed rosetta. The scene is set on a dark walnut table with soft, natural side lighting, creating a warm, artisanal atmosphere with rich brown tones and creamy textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBidxf-HZKj_V-kG5GbtHXdnYU3toJNzVHn1pJNfOTwyoIn6h44hTsTHvAy9oideL5s1BrTMXwq28A40p342ydMEtDA-4qbeg_qMXYEv-81f6_-UFGldb_I2mgeFFGjnlrGY8EiFU_1udsR3_kV2TDZ9e_cNlURraF8oG0vQgzQKuhRknWz1hsnSzZvzEybTm_G8RgAO2n1HFdJFSt6vlF-puM9jJeszB16sovj5ZtmJSE0r-2zglO2s7CzqKX5y0Cs-86xDoUhM2Rj"/>
+<div class="absolute top-4 right-4">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 font-label-md text-caption rounded-full">Classic</span>
+</div>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Cortado</h3>
+<span class="font-label-md text-label-md text-secondary">$4.50</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6 line-clamp-2">Equal parts double espresso and silky steamed milk. Balanced and intense.</p>
+<button class="w-full flex items-center justify-center gap-2 border border-primary text-primary py-3 font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span> Add to Cart
+                    </button>
+</div>
+</div>
+<!-- Item 2: Cold Coffee -->
+<div class="item-card bg-surface-container-lowest border border-outline-variant/10 group cursor-pointer" data-category="cold-coffee">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An elegant glass of cold brew coffee filled with large clear ice cubes. A swirl of heavy cream is mid-pour, creating beautiful white marbled patterns against the dark mahogany coffee. The background is a minimalist Scandi-style cafe interior with soft focus and high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEpuIcKafi662oA-p0oSI2bQ2vid3GXU8rYndYrSO_e78wzPP3agxJXdyoXO0MsNPgp5Ufo9uMokLiCuAcV4mGG4FKTsgRh-lRWFG11KifyD9j8gTUdPwqZMxPQ89QHZm-EzGhytqsUfzSBB2r2bQvRFpKfzskusFYGqKy9KyReNVlQa5An1RLk_xdQCW3choy8_2eqQwh5lqQmz35nfUdZmXTznHWhpQBK-CnmhPrVtygbD1-BQLosshpXAKyhhLnNFW6SYEA96P3"/>
+<div class="absolute top-4 right-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 font-label-md text-caption rounded-full">Steeped 18h</span>
+</div>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Nitrogen Cold Brew</h3>
+<span class="font-label-md text-label-md text-secondary">$6.00</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6 line-clamp-2">Velvety texture with notes of dark chocolate and toasted hazelnuts.</p>
+<button class="w-full flex items-center justify-center gap-2 border border-primary text-primary py-3 font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span> Add to Cart
+                    </button>
+</div>
+</div>
+<!-- Item 3: Pastries -->
+<div class="item-card bg-surface-container-lowest border border-outline-variant/10 group cursor-pointer" data-category="pastries">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A golden-brown, flaky croissant resting on a minimalist white ceramic plate. The pastry has a visible buttery sheen and delicate layers. The lighting is bright and airy, emphasizing the crisp texture. A small sprig of rosemary is placed beside it for a touch of artisanal luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCszD1czMbJwo9XnvhhBwkuP_18PvI3jTOT2sIRjywgbQtOJKKb5hRqB5mVcRjM8rxS2bKtx1SWaCjEE6ldMZBDrizrbUvbBYjb9ReUSUh5FRL_r7npquPZt4UPXy0kZAOGUTZR13Ws3_vlpeoexAEHsGvN5iWc0trpO2CfHBSpkH5BhyzKQeocweYZghCqeRoi4UAnJNKbD8UWx36L2LHkesUSewrip3V5t45C7kDmip7T0uO9OjjfDdzREjS0iSAy2QJUhJKL4u_t"/>
+<div class="absolute top-4 right-4">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 font-label-md text-caption rounded-full">Baked Daily</span>
+</div>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Salted Honey Croissant</h3>
+<span class="font-label-md text-label-md text-secondary">$5.25</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6 line-clamp-2">Laminated dough with locally sourced honey and Maldon sea salt flakes.</p>
+<button class="w-full flex items-center justify-center gap-2 border border-primary text-primary py-3 font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span> Add to Cart
+                    </button>
+</div>
+</div>
+<!-- Item 4: Hot Coffee -->
+<div class="item-card bg-surface-container-lowest border border-outline-variant/10 group cursor-pointer" data-category="hot-coffee">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist overhead shot of a black coffee served in a designer white cup. Steam rises gently against a clean, off-white stone background. The coffee has a bright clarity, suggesting a premium light roast. The overall mood is quiet, sophisticated, and focused on pure craft." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdRFZsk86LmnAmLNQJCqLOYNGmK-fKuDKTVWx33c9a8NgvFJdDPspRD3N09K3rQdjTSqcf_kxGPglm60gMs9lREkL_Y1Nn5BP0Vu4o1Y9I0t0qnrXT39G26it2tyMJeov8rhMbmSXS02juQLWGJE-aHI0WJHsFQAN0iWVG77J0KC9c-yFtoAdyo-o8hq0Rx_RqazIwAlum1KvbHv4_LIxSqBeyVkKDievdbtNc6Ri44lxWVs_iM58_NatGvwOpKcd0vN47IgBO3ME8"/>
+<div class="absolute top-4 right-4">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 font-label-md text-caption rounded-full">V60 Pour Over</span>
+</div>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Ethiopian Yirgacheffe</h3>
+<span class="font-label-md text-label-md text-secondary">$7.00</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6 line-clamp-2">Tea-like body with vibrant jasmine floral notes and citrus acidity.</p>
+<button class="w-full flex items-center justify-center gap-2 border border-primary text-primary py-3 font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span> Add to Cart
+                    </button>
+</div>
+</div>
+<!-- Item 5: Pastries -->
+<div class="item-card bg-surface-container-lowest border border-outline-variant/10 group cursor-pointer" data-category="pastries">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A thick slice of sourdough toast topped with creamy avocado, a soft boiled egg, and a sprinkle of red pepper flakes and microgreens. The image is shot from a 45-degree angle on a rustic linen cloth. The lighting is warm and golden, evoking a leisurely weekend brunch experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2Q-tjWihFz8Y6aG_5HFNH1MdfqwOGTgp3Z2e6vg4-UDauPuIojd-A1YqZ0v9JFhBSpufWAXDa1VVVKm52sboQv5zvJRBz0JxMGxlRhq3s05hSfiW5kRCuiuZjZyfTzTNKlTqsm6G3LB71P3UNcNQ4k2SOYH4YqY2hMdoJEu3XhwIzVyrOdYkd8qgTtBBFV25oDfNfZKwXWzeqrGgnBdCAohVZvIhpaHRafi6nJXM3af8M9uNzHOebuvJkdtYhEkvNx4QnFCN5oozn"/>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Avocado Sourdough</h3>
+<span class="font-label-md text-label-md text-secondary">$12.00</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6 line-clamp-2">House-made sourdough, hass avocado, 6-minute egg, and chili threads.</p>
+<button class="w-full flex items-center justify-center gap-2 border border-primary text-primary py-3 font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span> Add to Cart
+                    </button>
+</div>
+</div>
+<!-- Item 6: Cold Coffee -->
+<div class="item-card bg-surface-container-lowest border border-outline-variant/10 group cursor-pointer" data-category="cold-coffee">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A tall glass of iced matcha latte with distinct green and white layers. The drink is garnished with a single mint leaf. The background is a clean white marble countertop with soft morning light streaming in from a window, creating long, soft shadows and a fresh morning vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCALfCWAIAHegNacuqWlUGAtvDD5vbQ2u_lzAHcm6ew6cYQ7MGmbe6SixJB2BYyojyUm7yQC1LBUgW-GPZnGmEZrpEilm6rYOnvwOijcdAuSJPqBv5y_UmRrSQyUDpX1BtqadU_mOEN-mOqVp2jlc-xQPgnRECOjldhmTy6hzruGZ25nV9DarpKO_xUyfOct85qhfEZ6X5UKBdenQ4urNQYzZ72MgubSaP5fjzZZFVHwtaM4Ppu-I-D8UDZPoypySbrSE-cu488YN_8"/>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Iced Ceremonial Matcha</h3>
+<span class="font-label-md text-label-md text-secondary">$6.50</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6 line-clamp-2">Stone-ground Uji matcha whisked with oat milk and a touch of agave.</p>
+<button class="w-full flex items-center justify-center gap-2 border border-primary text-primary py-3 font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span> Add to Cart
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full py-xl border-t border-outline-variant/10">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="col-span-1 md:col-span-1">
+<div class="font-display-lg text-headline-md text-primary dark:text-primary-fixed mb-md">Crema &amp; Co.</div>
+<p class="text-on-surface-variant font-body-md text-body-md">Crafting the perfect cup since 2014. Committed to sustainability and direct-trade excellence.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-md">Discover</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors" href="#">Journal</a></li>
+<li><a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors" href="#">Wholesale</a></li>
+<li><a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-md">Support</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-md">Newsletter</h4>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4">Join our brew club for exclusive releases.</p>
+<div class="flex border-b border-primary">
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md p-2" placeholder="Your Email" type="email"/>
+<button class="material-symbols-outlined text-primary">arrow_forward</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-xl pt-md border-t border-outline-variant/10">
+<p class="text-on-surface-variant font-body-md text-caption">© 2024 Crema &amp; Co. Artisanal Roasters. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        function filterItems(category) {
+            const items = document.querySelectorAll('.item-card');
+            const chips = document.querySelectorAll('.filter-chip');
+
+            // Update active chip
+            chips.forEach(chip => {
+                chip.classList.remove('active');
+                if (chip.textContent.toLowerCase().includes(category.replace('-', ' ')) || (category === 'all' && chip.textContent === 'All Items')) {
+                    chip.classList.add('active');
+                }
+            });
+
+            // Filter grid items
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Quick add interaction simulation
+        document.querySelectorAll('button').forEach(btn => {
+            if(btn.textContent.includes('Add to Cart')) {
+                btn.addEventListener('click', (e) => {
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span> Added';
+                    btn.classList.add('bg-primary', 'text-on-primary');
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.remove('bg-primary', 'text-on-primary');
+                    }, 2000);
+                });
+            }
+        });
+    </script>
+</body></html>

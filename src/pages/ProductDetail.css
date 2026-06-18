@@ -7,7 +7,7 @@
   appearance: none;
   width: 20px;
   height: 20px;
-  background: #C8873A;
+  background: #432a1e;
   cursor: pointer;
   border-radius: 50%;
   border: 2px solid white;
@@ -15,12 +15,8 @@
 .custom-range::-moz-range-thumb {
   width: 20px;
   height: 20px;
-  background: #C8873A;
+  background: #432a1e;
   cursor: pointer;
   border-radius: 50%;
   border: 2px solid white;
-}
-.steamer-progress {
-  background: linear-gradient(to bottom, #C8873A, transparent);
-  transition: height 0.3s ease;
 }

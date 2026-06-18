@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Crema &amp; Co. | Artisanal Coffee Roasters</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdbcc",
+                    "on-surface": "#1e1b1a",
+                    "primary-container": "#5c4033",
+                    "on-primary-fixed-variant": "#5c4033",
+                    "on-secondary-fixed": "#271813",
+                    "surface-container-low": "#faf2ef",
+                    "inverse-surface": "#33302e",
+                    "inverse-primary": "#e6bead",
+                    "on-primary-container": "#d3ac9c",
+                    "surface-variant": "#e9e1de",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#504440",
+                    "tertiary-fixed-dim": "#ffb68c",
+                    "tertiary": "#522200",
+                    "surface-container": "#f4ecea",
+                    "secondary": "#6f5a53",
+                    "secondary-container": "#f9dcd3",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#dcc1b8",
+                    "surface-dim": "#e0d8d6",
+                    "on-tertiary-container": "#f3a271",
+                    "on-background": "#1e1b1a",
+                    "surface-tint": "#765749",
+                    "surface-container-highest": "#e9e1de",
+                    "surface-bright": "#fff8f6",
+                    "outline-variant": "#d4c3bd",
+                    "on-tertiary-fixed": "#321200",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#70370e",
+                    "on-secondary": "#ffffff",
+                    "surface": "#F8F5F0",
+                    "on-tertiary-fixed-variant": "#70370e",
+                    "inverse-on-surface": "#f7efec",
+                    "tertiary-fixed": "#ffdbc9",
+                    "secondary-fixed": "#f9dcd3",
+                    "background": "#F8F5F0",
+                    "on-primary-fixed": "#2c160b",
+                    "on-error-container": "#93000a",
+                    "primary": "#432a1e",
+                    "on-secondary-container": "#756058",
+                    "on-secondary-fixed-variant": "#56423c",
+                    "outline": "#82746f",
+                    "surface-container-high": "#efe6e4",
+                    "primary-fixed-dim": "#e6bead",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "lg": "48px",
+                    "sm": "12px",
+                    "margin-mobile": "16px",
+                    "xl": "80px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "container-max": "1280px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "caption": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #F8F5F0; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal-text {
+            overflow: hidden;
+        }
+        .reveal-text span {
+            display: inline-block;
+            transform: translateY(100%);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .active .reveal-text span {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-primary-fixed selection:text-primary overflow-x-hidden">
+<!-- TopNavBar (Shared Component) -->
+<nav class="w-full top-0 sticky z-50 bg-surface dark:bg-on-surface border-b border-outline-variant/30 duration-300 ease-in-out">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
+<!-- Brand Identity -->
+<a class="font-display-lg text-headline-md text-primary dark:text-primary-fixed-dim" href="#">
+                Crema &amp; Co.
+            </a>
+<!-- Navigation Links -->
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Our Story</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">The Roastery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Menu</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Brew Guides</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Subscription</a>
+</div>
+<!-- Action -->
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-all">shopping_bag</button>
+<button class="bg-primary text-on-primary px-md py-sm font-label-md text-label-md hover:opacity-80 transition-all uppercase tracking-widest">
+                    Order Now
+                </button>
+</div>
+</div>
+</nav>
+<!-- Full-Width Cinematic Hero -->
+<header class="relative w-full h-[921px] overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[20%] brightness-75" data-alt="A cinematic, high-resolution close-up of dark espresso pouring into a minimalist ceramic cup. The lighting is warm and dramatic, highlighting the rich crema and steam rising in a softly lit, boutique coffee roastery. The color palette features deep coffee browns, warm creams, and subtle shadows, evoking a sense of luxury and meticulous craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8n1tN7wRp-V469yezZ2T06ptOXB6p44Iw9g53FTHPseEjmKazYE4NVkf7W8aeRUdMwy5fZ7cxHX54sIUdC8SJ4l9L1R0Pn3tQbnS4wzc1j0NtCeAnVneX5XMw6jzlMy40hyGa7ZA6Cvl_p5ruFIIy7DJId3UQjhZlyVWOIqU05btfAghya94TqEWBHIum8nm6NTWLZIjLSdNfAuugLdH_Oj4JlEUNN8hRxSfjnfMm3uThE4_6TYPE9uDWZ0PUwKpa6wC1YXI8u-7L"/>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter h-full flex flex-col justify-center items-start">
+<div class="active space-y-md">
+<p class="font-label-md text-label-md text-primary-fixed uppercase tracking-[0.2em] reveal-text">
+<span>Authentic Origins &amp; Artisanal Craft</span>
+</p>
+<h1 class="font-display-lg text-display-lg text-white max-w-3xl reveal-text">
+<span>Crafted Coffee, <br/>Served With Passion</span>
+</h1>
+<div class="pt-md reveal-text">
+<button class="bg-primary text-on-primary px-lg py-md font-label-md text-label-md transition-all hover:scale-105">
+                        EXPLORE THE COLLECTION
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Editorial 12-Column Grid: Featured Products -->
+<section class="max-w-container-max mx-auto px-gutter py-xl">
+<div class="flex justify-between items-end mb-lg">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary italic mb-sm">Seasonal Curations</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Our master roasters select only the most exceptional beans from ethical estates worldwide.</p>
+</div>
+<a class="font-label-md text-label-md text-primary border-b border-primary uppercase tracking-wider pb-1" href="#">Shop All Products</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Product Card 1 -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden mb-md border border-outline-variant/10">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist studio photograph of a premium 250g bag of coffee beans from Ethiopia. The packaging is a textured matte cream with sophisticated serif typography. Soft, warm directional light creates elegant shadows on a neutral background, highlighting the artisanal quality and Scandinavian minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMwNH1ezn7xRkZIA92KD6DvIWGaQoqy27VzFbgdVUqzpXGBNCe9sxbw1RR3jx_wl7hFDlWA7_XLt1Hp82UeYDSi8iL7Go_mDo8JJyGO4HForu3qAQ9IqwSw0AQeC5U1_NyxakiSuOFb7L6TMslA7_7iKfMhR7xJ2SAXfcfyYWMKjHSuukcaO5GqFQ6cuxWgZ5DYfYsuum-yo7pkICQ5ZgCDn_79x50txpqXbCK8Ah9db84ZmGpkNZTbDJzMuL5qAqPhZc0hd1xzere"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-md text-caption text-secondary uppercase tracking-widest">Ethical Ethiopia</span>
+<h3 class="font-headline-md text-headline-md text-primary mt-xs">Yirgacheffe Floral</h3>
+</div>
+<p class="font-body-md text-body-md font-bold">$24.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="md:col-span-4 group cursor-pointer md:mt-lg">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden mb-md border border-outline-variant/10">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A luxurious coffee bean package labeled 'Mountain Peak Blend' from Colombia. The scene is lit with warm morning sunlight through a window, creating a serene, high-end editorial feel. The bag sits on a light wooden surface next to a single ceramic coffee cherry, emphasizing natural origins and premium branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrXB5YSSiTkUZxmpuVgCI0c1G3PgqexdOY3mBwPdfeE4b-_liX7bdSP6EBr_bzBWgCDGb0C6YCAtJD-MfmhqUZhctBPOlOIQ8pg1i-yppUJ4cQn2jEDI6Jvx0DLphDFd7XVeQu2p8CtvjuSiVmisl26yhIBtwlhh0QIsUX2qBH2by3sv8vwtn6R4DKewC6wDwHXRewDPH3fmAzwEg_kE-ZjP1SFPVXqcgw8MPwJod_kEDk457mR1u5qkyhnh8WvEpwP1Bze0T5BYZ3"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-md text-caption text-secondary uppercase tracking-widest">Dark Roast</span>
+<h3 class="font-headline-md text-headline-md text-primary mt-xs">Velvet Espresso</h3>
+</div>
+<p class="font-body-md text-body-md font-bold">$28.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden mb-md border border-outline-variant/10">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="High-end artisanal coffee packaging for a Sumatran roast. The packaging features a deep espresso brown label with gold foil accents. The photograph is captured in a high-contrast editorial style, with rich textures and a warm, inviting atmosphere that reflects the premium boutique nature of Crema &amp; Co." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2q3c04deMvZvUP0icNIvex_wAKC-JotalSMBMZE535WxDNcrp5ycKTVS_H9Aq6pExUUxwmPgPI9jfrQu32NEc2_zHZjyKtTJV3pUeWTh1fhKPaWrl4ADSjA3H_3ndZdSApNvIt1SBTNqvsRgxQ__nSEwGEjIBF748yncfQi4HrNlzw3eyDFMXUB3LN50Sn0fSF08OvshAxw_xvOgn4DrkkhLVPubC5ehlaEYDm1cLt1iZVLJJNE444N6yOo0z855wHlw18maQ-U4V"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-md text-caption text-secondary uppercase tracking-widest">Single Origin</span>
+<h3 class="font-headline-md text-headline-md text-primary mt-xs">Sumatran Earth</h3>
+</div>
+<p class="font-body-md text-body-md font-bold">$22.00</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Split-Layout 'About Us' Preview -->
+<section class="bg-surface-container-low py-xl overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 items-center gap-xl">
+<div class="relative">
+<div class="aspect-[5/6] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A documentary-style portrait of a master coffee roaster in a sun-drenched Scandinavian-style workshop. The person is focused on the roasting process, surrounded by burlap sacks of raw beans and high-tech minimalist equipment. The light is soft and natural, emphasizing the quiet luxury and dedication to the craft." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC4kzv3-dcPZXv4OOFhWTxoSn2GGXI6p5PKkMsdawCsbxpzwiqAs_SZS_dv2ihuU9KGhYHzw0NUbgPu3-foKtCTu0l0q0J6RrASITrXtzc3jBrIyh6YAGT7M7cgsxqgMnjDix6psMUQ6W-SbrujiwVLG6sClUsZES_F9iSTdVvAOz_B2_Um5kAdwjXmtvdhB1v1rkQHjtiStZbNUE94VO2AzCfg1dli3WE_DfqksOT8ho1bzBVbN1ySg9WguHELFgh1-Q8mcr8-wMS"/>
+</div>
+<div class="absolute -bottom-md -right-md bg-white p-lg max-w-xs hidden md:block border border-outline-variant/20">
+<p class="font-headline-md text-primary italic">"Coffee is not just a drink, it's a slow-living ritual."</p>
+<p class="font-caption text-caption text-on-surface-variant mt-sm">— Elias Thorne, Founder</p>
+</div>
+</div>
+<div class="md:pl-lg">
+<span class="font-label-md text-label-md text-primary uppercase tracking-[0.2em] mb-md block">Our Philosophy</span>
+<h2 class="font-display-lg text-headline-lg md:text-display-lg text-primary mb-md leading-tight">The Art of the Slow Pour</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">Founded in 2014, Crema &amp; Co. was born from a desire to bring the quiet precision of artisanal roasting to the modern espresso bar. We believe in direct trade, sustainable sourcing, and the patience required to develop each bean's unique profile.</p>
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+<p class="font-label-md text-label-md">Directly sourced from micro-lots</p>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+<p class="font-label-md text-label-md">Small-batch roasted daily</p>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+<p class="font-label-md text-label-md">Compostable, plastic-free packaging</p>
+</div>
+</div>
+<button class="mt-xl border border-primary text-primary px-lg py-md font-label-md text-label-md hover:bg-primary hover:text-white transition-all">
+                    READ OUR STORY
+                </button>
+</div>
+</div>
+</section>
+<!-- Masonry-style 'Atmosphere' Gallery -->
+<section class="max-w-container-max mx-auto px-gutter py-xl">
+<div class="text-center mb-xl">
+<h2 class="font-display-lg text-headline-lg text-primary">The Atmosphere</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mx-auto">Visit our boutique coffee bars and experience the warmth of a curated brew in a minimalist sanctuary.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 grid-rows-2 gap-gutter h-[800px]">
+<div class="md:col-span-8 md:row-span-1 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An wide-angle shot of a minimalist, modern coffee shop interior with light wood surfaces, white walls, and floor-to-ceiling windows. People are sitting at small round tables in a calm, serene environment. The lighting is soft and airy, creating a Scandinavian boutique cafe atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnT2f7po9ac4Smg_qKiw_0DZVFQomVTK-X1jVV7XNVkXBL5AbOwkZIX5-SzimyPgH2W8IeW1NipaTbe5V4gJ6m152_Z-D-RmP4F99BMCxRiIZqWQ2-4q1vc0-oVp5WoIeKm-XTfHsv7YxuzKPV3-Z9m4g76MlAtjaZmdctcFGh1XAn8xf1CylMPE6sLeAuZYi1fxL6Q5Q2d7orlZnTIZR6F_UFr_aoERXHV4WIvAs1LPB2R72YqeLDXf7GFTahABor_1TMGV8hbPwx"/>
+</div>
+<div class="md:col-span-4 md:row-span-2 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A detailed close-up shot of latte art being poured into a textured ceramic cup. The milk is silky and white, forming a delicate heart shape against the rich espresso. The focus is sharp on the cup, with a softly blurred background of a dark wooden counter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrH0KRrSta1GgybsUNEjz8dlHfiRp8-JXytfMvT5TcGNcDPZuOQm0BLQAa9F709sP2Y7sdvD1VHm--txLVDEWiSGNcrKBdQtqlpT5RIhdWUSy1HwfE3RWYKAmVnSzd0brw90fSxNiHGWjTtSF1RYgkcdM4FclZPzlJW5BdJ9OPriF1LqrGc4idUDPU8-I9Imb_WQm5eM7pTQvfOd10X1sczn2hQUiZ6xS_su7k_KQjhsSX4s_lTveXaXTcVwsVmFzc0MljAMBqQx1D"/>
+</div>
+<div class="md:col-span-4 md:row-span-1 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A collection of artisanal coffee brewing equipment—a glass Chemex, a copper kettle, and a wooden hand grinder—arranged on a minimalist marble shelf. The aesthetic is clean, professional, and sophisticated, emphasizing the ritual of coffee preparation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARKHy6RBYSrPhjSCsxQl2IvoxPIAKV-ZIpULNqDWSh5JVaI3j0WOxd64yaAJU3D0AB4wX5MJTubXAa_znO8VCCpaNyf4fhDnX-Bqv_TuvlEE3RWYxymtu2ZEKmyUZl7dHmaeiv3l9XwwNPaV4_LDSK9yII9zthfOGFPG4za6O4waqrsaZ0kZjRJEujxpBmH0k-J4_eR-TbLBrMhqI4geTAcfWTChVaCSFZ7bWIKoXtMdDirNemQw3E29hnheL9utUoZ3Jq8PDWC6Rp"/>
+</div>
+<div class="md:col-span-4 md:row-span-1 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A cozy corner of a high-end coffee shop featuring a leather armchair and a small side table with a cup of coffee and an open magazine. The mood is peaceful and intellectual, embodying the 'slow living' philosophy of the Crema &amp; Co brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5iUSgsVC5DGp_H3Rh291z8WqKUcIq_eP90B5ank_W0guNmSF95FbVbLU4gFpghFTKfA2KGo2Q0eUYFrWmlQVWUf_knK01okTZK-gHUCIFu-qhY-PK34Iw7XmqeDnSTo67ldxujW36pct7ZYXVX0uWpOmyulFG71UJKUYkc2Ox8qzlzgLNYOi6gdgzixXltjS91o8kWSFRVyEPi8M84nz9VSmKfEjBeq8GTzknryi_r10w_EOOOp_sOVb1H1yh31giws7xcVLGagHN"/>
+</div>
+</div>
+</section>
+<!-- Subscription / Newsletter -->
+<section class="max-w-container-max mx-auto px-gutter py-xl mb-xl border-y border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div>
+<h3 class="font-display-lg text-headline-lg text-primary mb-sm">The Journal</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Join our circle for exclusive access to small-batch releases, brewing techniques from our roasters, and local event invitations.</p>
+</div>
+<div class="flex flex-col gap-md">
+<div class="relative">
+<input class="w-full bg-transparent border-b border-primary py-md font-body-md focus:outline-none focus:border-tertiary transition-colors placeholder:text-on-surface-variant/50" placeholder="Email Address" type="email"/>
+<button class="absolute right-0 bottom-md material-symbols-outlined text-primary">arrow_forward</button>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">By subscribing, you agree to our Privacy Policy and consent to receive marketing emails.</p>
+</div>
+</div>
+</section>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-xl bg-surface-container dark:bg-inverse-surface">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-lg">
+<!-- Brand Column -->
+<div class="space-y-md">
+<a class="font-display-lg text-headline-md text-primary dark:text-primary-fixed block" href="#">Crema &amp; Co.</a>
+<p class="font-body-md text-body-md text-on-surface-variant">Artisanal roasters dedicated to the craft of exceptional coffee and sustainable sourcing since 2014.</p>
+</div>
+<!-- Links Column 1 -->
+<div class="flex flex-col gap-sm">
+<h4 class="font-label-md text-label-md text-primary dark:text-primary-fixed uppercase tracking-wider mb-xs">Explore</h4>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors font-body-md text-body-md" href="#">Journal</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors font-body-md text-body-md" href="#">Wholesale</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors font-body-md text-body-md" href="#">Sustainability</a>
+</div>
+<!-- Links Column 2 -->
+<div class="flex flex-col gap-sm">
+<h4 class="font-label-md text-label-md text-primary dark:text-primary-fixed uppercase tracking-wider mb-xs">Support</h4>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors font-body-md text-body-md" href="#">Shipping &amp; Returns</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors font-body-md text-body-md" href="#">Contact Us</a>
+</div>
+<!-- Social/Loc Column -->
+<div class="space-y-md">
+<h4 class="font-label-md text-label-md text-primary dark:text-primary-fixed uppercase tracking-wider mb-xs">Connect</h4>
+<div class="flex gap-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Pinterest</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Vimeo</a>
+</div>
+<div class="pt-sm">
+<p class="font-caption text-caption text-on-surface-variant">Flagship Roastery:</p>
+<p class="font-body-md text-body-md text-primary">82 Artisan Way, Portland, OR</p>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-xl pt-lg border-t border-outline-variant/30">
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">
+                © 2024 Crema &amp; Co. Artisanal Roasters. All rights reserved.
+            </p>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal-text');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.closest('.active')?.classList.add('visible'); // If we wanted parent level control
+                        entry.target.classList.add('active'); // Added to trigger the span transition
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(reveal => observer.observe(reveal));
+        });
+    </script>
+</body></html>

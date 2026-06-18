@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Locations | Crema & Co. Artisanal Roasters</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#ffdbcc",
+                      "on-surface": "#1e1b1a",
+                      "primary-container": "#5c4033",
+                      "on-primary-fixed-variant": "#5c4033",
+                      "on-secondary-fixed": "#271813",
+                      "surface-container-low": "#faf2ef",
+                      "inverse-surface": "#33302e",
+                      "inverse-primary": "#e6bead",
+                      "on-primary-container": "#d3ac9c",
+                      "surface-variant": "#e9e1de",
+                      "on-error": "#ffffff",
+                      "on-surface-variant": "#504440",
+                      "tertiary-fixed-dim": "#ffb68c",
+                      "tertiary": "#522200",
+                      "surface-container": "#f4ecea",
+                      "secondary": "#6f5a53",
+                      "secondary-container": "#f9dcd3",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#dcc1b8",
+                      "surface-dim": "#e0d8d6",
+                      "on-tertiary-container": "#f3a271",
+                      "on-background": "#1e1b1a",
+                      "surface-tint": "#765749",
+                      "surface-container-highest": "#e9e1de",
+                      "surface-bright": "#fff8f6",
+                      "outline-variant": "#d4c3bd",
+                      "on-tertiary-fixed": "#321200",
+                      "on-primary": "#ffffff",
+                      "tertiary-container": "#70370e",
+                      "on-secondary": "#ffffff",
+                      "surface": "#fff8f6",
+                      "on-tertiary-fixed-variant": "#70370e",
+                      "inverse-on-surface": "#f7efec",
+                      "tertiary-fixed": "#ffdbc9",
+                      "secondary-fixed": "#f9dcd3",
+                      "background": "#fff8f6",
+                      "on-primary-fixed": "#2c160b",
+                      "on-error-container": "#93000a",
+                      "primary": "#432a1e",
+                      "on-secondary-container": "#756058",
+                      "on-secondary-fixed-variant": "#56423c",
+                      "outline": "#82746f",
+                      "surface-container-high": "#efe6e4",
+                      "primary-fixed-dim": "#e6bead",
+                      "on-tertiary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "lg": "48px",
+                      "sm": "12px",
+                      "margin-mobile": "16px",
+                      "xl": "80px",
+                      "base": "8px",
+                      "xs": "4px",
+                      "md": "24px",
+                      "container-max": "1280px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Playfair Display"],
+                      "caption": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Playfair Display"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Playfair Display"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d4c3bd; border-radius: 10px; }
+        .location-card-active {
+            border-left: 4px solid #432a1e !important;
+            background-color: #f4ecea !important;
+        }
+        .map-gradient-overlay {
+            background: linear-gradient(to right, rgba(255,248,246,1) 0%, rgba(255,248,246,0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar Navigation Shell -->
+<nav class="w-full top-0 sticky bg-surface z-50 border-b border-outline-variant/30 duration-300 ease-in-out">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
+<a class="font-display-lg text-headline-md text-primary tracking-tight" href="#">Crema & Co.</a>
+<div class="hidden md:flex items-center gap-lg">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Our Story</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">The Roastery</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Menu</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Brew Guides</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Subscription</a>
+</div>
+<button class="bg-primary text-on-primary px-md py-sm font-label-md text-label-md hover:opacity-80 transition-all uppercase tracking-widest">
+                Order Now
+            </button>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-gutter py-lg min-h-screen">
+<div class="mb-lg">
+<h1 class="font-display-lg text-headline-lg mb-sm">Our Cafés</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">From the historic cobblestones of the Old Quarter to the glass and steel of the Innovation District, discover our curated spaces for coffee and conversation.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg relative">
+<!-- Left: Location List -->
+<div class="lg:col-span-5 h-[700px] overflow-y-auto pr-sm custom-scrollbar space-y-md">
+<!-- Search & Filter (Contextual) -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 p-md sticky top-0 z-10">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-sm text-outline">search</span>
+<input class="w-full pl-lg pr-md py-sm bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 font-body-md transition-colors outline-none" placeholder="Find a neighborhood..." type="text"/>
+</div>
+</div>
+<!-- Location Cards -->
+<div class="space-y-md" id="location-list">
+<!-- Card 1 -->
+<article class="location-card group bg-surface p-md border border-outline-variant/30 cursor-pointer transition-all hover:bg-surface-container duration-300 location-card-active" onclick="focusLocation('Copenhagen-V')">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-primary">Vesterbro Flagship</h3>
+<span class="font-label-md text-caption px-sm py-xs bg-tertiary-fixed text-on-tertiary-fixed-variant">NOW OPEN</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-md">Vesterbrogade 44, 1620 København V</p>
+<div class="grid grid-cols-2 gap-sm mb-md text-caption font-label-md">
+<div>
+<span class="text-outline uppercase tracking-wider block mb-xs">Weekdays</span>
+<span class="text-on-surface">07:00 — 19:00</span>
+</div>
+<div>
+<span class="text-outline uppercase tracking-wider block mb-xs">Weekends</span>
+<span class="text-on-surface">08:00 — 20:00</span>
+</div>
+</div>
+<div class="flex gap-sm border-t border-outline-variant/20 pt-md">
+<button class="flex-1 border border-primary text-primary py-sm font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all">GET DIRECTIONS</button>
+<button class="px-md border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="location-card group bg-surface p-md border border-outline-variant/30 cursor-pointer transition-all hover:bg-surface-container duration-300" onclick="focusLocation('Copenhagen-K')">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-primary">The Roastery (Indre By)</h3>
+<span class="font-label-md text-caption px-sm py-xs bg-surface-container-high text-on-surface-variant">CLOSING SOON</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-md">Store Kongensgade 12, 1264 København K</p>
+<div class="grid grid-cols-2 gap-sm mb-md text-caption font-label-md">
+<div>
+<span class="text-outline uppercase tracking-wider block mb-xs">Weekdays</span>
+<span class="text-on-surface">08:00 — 18:00</span>
+</div>
+<div>
+<span class="text-outline uppercase tracking-wider block mb-xs">Weekends</span>
+<span class="text-on-surface">10:00 — 17:00</span>
+</div>
+</div>
+<div class="flex gap-sm border-t border-outline-variant/20 pt-md">
+<button class="flex-1 border border-primary text-primary py-sm font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all">GET DIRECTIONS</button>
+<button class="px-md border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="location-card group bg-surface p-md border border-outline-variant/30 cursor-pointer transition-all hover:bg-surface-container duration-300" onclick="focusLocation('Copenhagen-N')">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-primary">Nørrebro Creative Space</h3>
+</div>
+<p class="font-body-md text-on-surface-variant mb-md">Jægersborggade 18, 2200 København N</p>
+<div class="grid grid-cols-2 gap-sm mb-md text-caption font-label-md">
+<div>
+<span class="text-outline uppercase tracking-wider block mb-xs">Daily</span>
+<span class="text-on-surface">07:30 — 21:00</span>
+</div>
+</div>
+<div class="flex gap-sm border-t border-outline-variant/20 pt-md">
+<button class="flex-1 border border-primary text-primary py-sm font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all">GET DIRECTIONS</button>
+<button class="px-md border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</article>
+</div>
+</div>
+<!-- Right: Interactive Map Section -->
+<div class="lg:col-span-7 sticky top-lg h-[700px] border border-outline-variant/30 bg-surface-container overflow-hidden group">
+<!-- Mock Map Interface -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[0.3] sepia-[0.1] opacity-90" data-alt="A refined, minimalist vector map of Copenhagen featuring muted cream and espresso tones. The map highlights major streets with thin brown lines and includes custom illustrated markers for café locations. The aesthetic is clean, Scandinavian, and sophisticated, mirroring an editorial magazine layout with a high-end feel." data-location="Copenhagen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpx89WJBI3UxV9xRtLBQSqHyyV1Pl_iD88Yv7x7E4LwZfAXtBDo6PwweuPmWLi-Q0QaEfAIs4c27sdKQLyxUUqxhurG1g5oBpjWQNR0Lw4j_LF-Z2GN12AB7gAR112uolekqvpkrcjkmLFezspS_FseL4OYYNQ6bdJmttITMSD22zH10nej6pPDb5wKBMEoI_e8Yh3kVCP92qaoGUWuggCjpPKKLcy49cLnbvu6wXoJ8pD5HZK1uSGB57PrahPQcaKPEYoJL1Pcxlk"/>
+<!-- Interactive Markers -->
+<div class="absolute top-[35%] left-[45%] group cursor-pointer" onclick="focusLocation('Copenhagen-V')">
+<div class="relative">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg border-2 border-surface animate-bounce-slow">
+<span class="material-symbols-outlined text-on-primary text-body-md">coffee</span>
+</div>
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-on-surface text-surface py-xs px-sm text-caption rounded shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Vesterbro Flagship</div>
+</div>
+</div>
+<div class="absolute top-[50%] left-[55%] group cursor-pointer" onclick="focusLocation('Copenhagen-K')">
+<div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center shadow-lg border-2 border-surface">
+<span class="material-symbols-outlined text-on-primary text-caption">local_cafe</span>
+</div>
+</div>
+</div>
+<!-- Overlay Controls -->
+<div class="absolute top-md right-md flex flex-col gap-xs z-20">
+<button class="w-10 h-10 bg-surface border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container transition-colors shadow-sm"><span class="material-symbols-outlined">add</span></button>
+<button class="w-10 h-10 bg-surface border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container transition-colors shadow-sm"><span class="material-symbols-outlined">remove</span></button>
+<button class="w-10 h-10 bg-surface border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container transition-colors shadow-sm mt-sm"><span class="material-symbols-outlined">my_location</span></button>
+</div>
+<!-- Contextual Detail Panel (Appears on focus) -->
+<div class="absolute bottom-0 inset-x-0 bg-surface/95 backdrop-blur-md border-t border-outline-variant/30 p-lg transform translate-y-full transition-transform duration-500 ease-in-out z-30" id="map-detail-panel">
+<button class="absolute top-md right-md text-outline hover:text-primary transition-colors" onclick="hidePanel()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="grid grid-cols-2 gap-lg">
+<div>
+<h4 class="font-label-md text-label-md text-outline uppercase tracking-[0.2em] mb-sm">Parking Information</h4>
+<p class="font-body-md text-on-surface-variant leading-relaxed">Secure bicycle racks are available directly in front of the entrance. For vehicles, the Westside Multi-storey parking is a 3-minute walk away (Blue Zone).</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-outline uppercase tracking-[0.2em] mb-sm">Nearby Landmarks</h4>
+<ul class="font-body-md text-on-surface space-y-xs">
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-body-md text-secondary">museum</span> Glyptoteket Art Museum</li>
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-body-md text-secondary">park</span> Tivoli Gardens</li>
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-body-md text-secondary">train</span> Copenhagen Central Station</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Brand Values / Amenities Section -->
+<section class="mt-xl py-xl border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="text-center md:text-left">
+<span class="material-symbols-outlined text-display-lg text-primary-container mb-md">wifi</span>
+<h4 class="font-headline-md mb-sm">High-Speed Fiber</h4>
+<p class="text-on-surface-variant text-body-md">Complimentary 1Gbps connectivity for all our guests, ensuring your productivity is as smooth as our roast.</p>
+</div>
+<div class="text-center md:text-left">
+<span class="material-symbols-outlined text-display-lg text-primary-container mb-md">bolt</span>
+<h4 class="font-headline-md mb-sm">Power Stations</h4>
+<p class="text-on-surface-variant text-body-md">Integrated USB-C and standard power outlets at every communal table and window seat.</p>
+</div>
+<div class="text-center md:text-left">
+<span class="material-symbols-outlined text-display-lg text-primary-container mb-md">pets</span>
+<h4 class="font-headline-md mb-sm">Pet Friendly</h4>
+<p class="text-on-surface-variant text-body-md">Well-behaved companions are always welcome in our outdoor seating and designated lounge areas.</p>
+</div>
+<div class="text-center md:text-left">
+<span class="material-symbols-outlined text-display-lg text-primary-container mb-md">meeting_room</span>
+<h4 class="font-headline-md mb-sm">Private Alcoves</h4>
+<p class="text-on-surface-variant text-body-md">Semi-private seating available for focused work or intimate conversations, bookable via our app.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Navigation Shell -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full py-xl mt-xl">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="col-span-1 md:col-span-1">
+<a class="font-display-lg text-headline-md text-primary block mb-md" href="#">Crema & Co.</a>
+<p class="text-on-surface-variant font-body-md max-w-xs">Elevating your daily ritual through exceptional beans and architectural spaces.</p>
+</div>
+<div class="space-y-sm">
+<h5 class="font-label-md text-primary uppercase tracking-widest mb-md">Discovery</h5>
+<a class="block text-on-surface-variant hover:text-primary transition-colors" href="#">Journal</a>
+<a class="block text-on-surface-variant hover:text-primary transition-colors" href="#">Wholesale</a>
+<a class="block text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability</a>
+</div>
+<div class="space-y-sm">
+<h5 class="font-label-md text-primary uppercase tracking-widest mb-md">Customer Support</h5>
+<a class="block text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="block text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping & Returns</a>
+<a class="block text-on-surface-variant hover:text-primary transition-colors" href="#">FAQs</a>
+</div>
+<div>
+<h5 class="font-label-md text-primary uppercase tracking-widest mb-md">Newsletter</h5>
+<div class="flex">
+<input class="bg-transparent border-b border-outline w-full py-sm focus:border-primary focus:ring-0 outline-none" placeholder="Email address" type="email"/>
+<button class="ml-sm text-primary transition-all hover:translate-x-1">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-lg pt-lg border-t border-outline-variant/30">
+<p class="text-on-surface-variant text-caption">© 2024 Crema & Co. Artisanal Roasters. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        function focusLocation(id) {
+            const panel = document.getElementById('map-detail-panel');
+            panel.classList.remove('translate-y-full');
+            
+            // Toggle card highlight
+            document.querySelectorAll('.location-card').forEach(card => {
+                card.classList.remove('location-card-active');
+            });
+            
+            // Find relevant card based on search or interaction (simplified for demo)
+            event.currentTarget.classList.add('location-card-active');
+        }
+
+        function hidePanel() {
+            const panel = document.getElementById('map-detail-panel');
+            panel.classList.add('translate-y-full');
+        }
+
+        // Close panel when clicking outside map area but not on markers
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.location-card') && !e.target.closest('#map-detail-panel') && !e.target.closest('[onclick^="focusLocation"]')) {
+                hidePanel();
+            }
+        });
+    </script>
+</body></html>

@@ -1,54 +1,53 @@
 /* ============================================
    CREMA & CO. DESIGN SYSTEM TOKENS
-   Based on Stitch Project: "Artisanal Precision"
-   Dark Mode Luxury + Glassmorphism
+   Based on Stitch Project: "Artisan Coffee Minimalist"
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
-  /* ── Surface Colors (Tiered Dark System) ── */
-  /* ── Surface Colors (Light Theme) ── */
-  --surface: #fff8f5;
-  --surface-dim: #ead6cb;
-  --surface-bright: #ffffff;
+  /* ── Surface Colors ── */
+  --surface: #F8F5F0;
+  --surface-dim: #e0d8d6;
+  --surface-bright: #fff8f6;
   --surface-container-lowest: #ffffff;
-  --surface-container-low: #fff1e9;
-  --surface-container: #feeade;
-  --surface-container-high: #f8e4d9;
-  --surface-container-highest: #f2dfd3;
+  --surface-container-low: #faf2ef;
+  --surface-container: #f4ecea;
+  --surface-container-high: #efe6e4;
+  --surface-container-highest: #e9e1de;
 
   /* ── On-Surface ── */
-  --on-surface: #261C15;
-  --on-surface-variant: #4A3428;
+  --on-surface: #1e1b1a;
+  --on-surface-variant: #504440;
 
   /* ── Inverse ── */
-  --inverse-surface: #392e26;
-  --inverse-on-surface: #ffede3;
-  --inverse-primary: #c9c6c0;
+  --inverse-surface: #33302e;
+  --inverse-on-surface: #f7efec;
+  --inverse-primary: #e6bead;
 
   /* ── Outline ── */
-  --outline: #79776f;
-  --outline-variant: #e6e2db;
+  --outline: #82746f;
+  --outline-variant: #d4c3bd;
 
-  /* ── Primary (Caramel/Brown) ── */
-  --primary: #4A3428;
+  /* ── Primary ── */
+  --primary: #432a1e;
   --on-primary: #ffffff;
-  --primary-container: #f5f1ea;
-  --on-primary-container: #6f6d68;
-  --primary-fixed: #e6e2db;
-  --primary-fixed-dim: #c9c6c0;
+  --primary-container: #5c4033;
+  --on-primary-container: #d3ac9c;
+  --primary-fixed: #ffdbcc;
+  --primary-fixed-dim: #e6bead;
 
   /* ── Secondary ── */
-  --secondary: #73594b;
+  --secondary: #6f5a53;
   --on-secondary: #ffffff;
-  --secondary-container: #ffdbca;
-  --on-secondary-container: #795f51;
+  --secondary-container: #f9dcd3;
+  --on-secondary-container: #756058;
 
   /* ── Tertiary ── */
-  --tertiary: #885202;
+  --tertiary: #522200;
   --on-tertiary: #ffffff;
-  --tertiary-container: #ffefe2;
+  --tertiary-container: #70370e;
+  --on-tertiary-container: #f3a271;
 
   /* ── Error ── */
   --error: #ba1a1a;
@@ -56,91 +55,77 @@
   --error-container: #ffdad6;
 
   /* ── Mapped Brand Colors for Quick Theme Swap ── */
-  --espresso-black: #fff8f5; /* Background */
+  --espresso-black: #F8F5F0; /* Background */
   --charcoal-haze: #ffffff;  /* Card Background */
-  --liquid-gold: #C8873A;    /* Caramel Accents */
-  --froth-cream: #261C15;    /* Headings */
-  --steam-gray: #795F51;     /* Muted Text */
+  --liquid-gold: #ffb68c;    /* Accents */
+  --froth-cream: #1e1b1a;    /* Headings */
+  --steam-gray: #504440;     /* Muted Text */
 
   /* ── Surface Tint ── */
-  --surface-tint: #605e59;
+  --surface-tint: #765749;
 
   /* ── Typography Scale ── */
-  --font-display: 'Sora', sans-serif;
-  --font-body: 'Sora', sans-serif;
-  --font-mono: 'Sora', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Inter', sans-serif;
 
   /* Display Large */
-  --display-lg-size: 48px;
+  --display-lg-size: 64px;
   --display-lg-weight: 700;
-  --display-lg-line: 56px;
+  --display-lg-line: 1.1;
   --display-lg-spacing: -0.02em;
 
   /* Headline Large */
   --headline-lg-size: 32px;
   --headline-lg-weight: 600;
-  --headline-lg-line: 40px;
+  --headline-lg-line: 1.3;
   --headline-lg-spacing: -0.01em;
 
   /* Headline Large Mobile */
-  --headline-lg-mobile-size: 28px;
+  --headline-lg-mobile-size: 24px;
   --headline-lg-mobile-weight: 600;
-  --headline-lg-mobile-line: 36px;
+  --headline-lg-mobile-line: 1.3;
 
   /* Body Large */
   --body-lg-size: 18px;
   --body-lg-weight: 400;
-  --body-lg-line: 28px;
+  --body-lg-line: 1.6;
 
   /* Body Medium */
   --body-md-size: 16px;
   --body-md-weight: 400;
-  --body-md-line: 24px;
+  --body-md-line: 1.6;
 
   /* Label Caps */
-  --label-caps-size: 12px;
-  --label-caps-weight: 500;
-  --label-caps-line: 16px;
-  --label-caps-spacing: 0.1em;
+  --label-caps-size: 14px;
+  --label-caps-weight: 600;
+  --label-caps-line: 1.2;
+  --label-caps-spacing: 0.05em;
 
   /* Label Small */
   --label-sm-size: 12px;
-  --label-sm-weight: 600;
-  --label-sm-line: 16px;
+  --label-sm-weight: 500;
+  --label-sm-line: 1;
 
   /* ── Border Radius ── */
-  --rounded-sm: 0.25rem;
-  --rounded: 0.5rem;
-  --rounded-md: 0.75rem;
-  --rounded-lg: 1rem;
-  --rounded-xl: 1.5rem;
+  --rounded-sm: 0.125rem;
+  --rounded: 0.25rem;
+  --rounded-md: 0.5rem;
+  --rounded-lg: 0.75rem;
+  --rounded-xl: 0.75rem;
   --rounded-full: 9999px;
 
   /* ── Spacing ── */
-  --container-margin: 20px;
-  --gutter: 16px;
+  --container-margin: 16px;
+  --gutter: 24px;
   --unit-xs: 4px;
-  --unit-sm: 8px;
-  --unit-md: 16px;
-  --unit-lg: 24px;
-  --unit-xl: 48px;
-  --safe-area-bottom: 34px;
+  --unit-sm: 12px;
+  --unit-md: 24px;
+  --unit-lg: 48px;
+  --unit-xl: 80px;
 
   /* ── Transitions ── */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-liquid: 600ms cubic-bezier(0.22, 1, 0.36, 1);
-
-  /* ── Minimalist Containers (Replaces Glass) ── */
-  --glass-bg: #ffffff;
-  --glass-blur: 0px;
-  --glass-border: var(--outline-variant);
-
-  /* ── Glow / Shadow ── */
-  --gold-glow: 0 4px 20px rgba(74, 52, 40, 0.08);
-  --gold-glow-active: 0 8px 30px rgba(74, 52, 40, 0.12);
-
-  /* ── Gradient Border ── */
-  --gold-border-gradient: var(--outline-variant);
 }

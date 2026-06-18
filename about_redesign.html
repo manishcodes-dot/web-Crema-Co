@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Story | Crema &amp; Co. Artisanal Roasters</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Shared Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdbcc",
+                    "on-surface": "#1e1b1a",
+                    "primary-container": "#5c4033",
+                    "on-primary-fixed-variant": "#5c4033",
+                    "on-secondary-fixed": "#271813",
+                    "surface-container-low": "#faf2ef",
+                    "inverse-surface": "#33302e",
+                    "inverse-primary": "#e6bead",
+                    "on-primary-container": "#d3ac9c",
+                    "surface-variant": "#e9e1de",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#504440",
+                    "tertiary-fixed-dim": "#ffb68c",
+                    "tertiary": "#522200",
+                    "surface-container": "#f4ecea",
+                    "secondary": "#6f5a53",
+                    "secondary-container": "#f9dcd3",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#dcc1b8",
+                    "surface-dim": "#e0d8d6",
+                    "on-tertiary-container": "#f3a271",
+                    "on-background": "#1e1b1a",
+                    "surface-tint": "#765749",
+                    "surface-container-highest": "#e9e1de",
+                    "surface-bright": "#fff8f6",
+                    "outline-variant": "#d4c3bd",
+                    "on-tertiary-fixed": "#321200",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#70370e",
+                    "on-secondary": "#ffffff",
+                    "surface": "#fff8f6",
+                    "on-tertiary-fixed-variant": "#70370e",
+                    "inverse-on-surface": "#f7efec",
+                    "tertiary-fixed": "#ffdbc9",
+                    "secondary-fixed": "#f9dcd3",
+                    "background": "#fff8f6",
+                    "on-primary-fixed": "#2c160b",
+                    "on-error-container": "#93000a",
+                    "primary": "#432a1e",
+                    "on-secondary-container": "#756058",
+                    "on-secondary-fixed-variant": "#56423c",
+                    "outline": "#82746f",
+                    "surface-container-high": "#efe6e4",
+                    "primary-fixed-dim": "#e6bead",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "lg": "48px",
+                    "sm": "12px",
+                    "margin-mobile": "16px",
+                    "xl": "80px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "container-max": "1280px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "caption": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #F8F5F0; /* Tonal background from guidance */
+        }
+        .tonal-layer-1 {
+            background-color: #FCFBF8;
+            border: 0.5px solid rgba(92, 64, 51, 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(30, 27, 26, 0.4), rgba(30, 27, 26, 0.8));
+        }
+    </style>
+</head>
+<body class="text-on-surface font-body-md">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky bg-surface z-50 border-b border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
+<div class="font-display-lg text-headline-md text-primary">Crema &amp; Co.</div>
+<div class="hidden md:flex items-center gap-lg">
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Our Story</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">The Roastery</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Menu</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Brew Guides</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Subscription</a>
+</div>
+<button class="bg-primary text-on-primary px-md py-sm font-label-md hover:opacity-80 transition-all">Order Now</button>
+</div>
+</nav>
+<main>
+<!-- Editorial Hero Section -->
+<section class="relative h-[921px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center scale-105" data-alt="A cinematic, high-contrast photograph of steam rising from a freshly poured cup of espresso in a minimalist Scandinavian cafe. The lighting is soft and directional, highlighting the rich crema of the coffee and the clean textures of a light wood table. The background is softly blurred, showing hints of an artisanal roastery with warm copper details and neutral cream walls, creating a sophisticated and atmospheric luxury editorial mood." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxj5esx-uwP4RPJ9-r_RSaYlp9QFTrF6U6ducE_NQHlVD1oVZjGznJLRDSINJ0Mqe8Gz8lapXUPLIviZKDTtFcFYkkRoIcsBOcUKSzGauO-m2rzCIwrfVuhvDygrFEaOXuqEaBuL5CPACThVabIc7j7xAzUTDcOoerel_wsk8Bfal9ScJqEFLEN0yh6TxSoHPR30AlhUnsSm6NramftTmQlm3wDsQXgh7PMjCWHp163SgrS1uVpiFQBMl0kXMocJb9kjj1DeWzynLW')">
+</div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter w-full text-surface-bright">
+<div class="max-w-3xl">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] mb-md block opacity-80">Established 2014</span>
+<h1 class="font-display-lg text-display-lg mb-lg italic">The alchemy of the perfect bean.</h1>
+<p class="font-body-lg text-body-lg leading-relaxed max-w-xl opacity-90">
+                        We believe coffee is more than a morning ritual. It is a precise intersection of horticulture, chemistry, and soul.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Our Story Split Layout -->
+<section class="py-xl max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div class="order-2 md:order-1">
+<div class="w-full aspect-[4/5] bg-cover bg-center tonal-layer-1" data-alt="A portrait of a master coffee roaster intently observing a cooling tray of dark, roasted coffee beans. The lighting is dramatic and warm, coming from a nearby window, casting long shadows and highlighting the oily sheen of the beans and the concentrated expression on the roaster's face. The setting is an industrial-chic roastery with exposed brick and stainless steel equipment, conveying a sense of deep craftsmanship and artisanal precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXdi7tR4udFNapkeVhL5spHlDbWqApXoLDE5P0Gjid5Eow-cI57uHlLS1LUVo36kbE5MYeMTHM538Lhb0S6VUEswBkS62dax4MWpz4SQtN28FSF2bvDMTREZFNVa9OtLSfJWZ1WrWBsLX9PBhU1vdCwYn21TybAbK07IegjmDrG9nJasQoaQ3DXs4fCQwBRCCIANhxsZicrgNxZcijLcsJ26kwj4HV_lKrZkonpXOxk0669_Mymp13auxl7Q-nZLiHqRq03wxjKh_b')">
+</div>
+</div>
+<div class="order-1 md:order-2 space-y-md">
+<h2 class="font-headline-lg text-headline-lg text-primary italic">Our Story</h2>
+<h3 class="font-headline-md text-headline-md">From a single origin to a community of connoisseurs.</h3>
+<div class="space-y-sm text-on-surface-variant font-body-md leading-relaxed">
+<p>
+                            Crema &amp; Co. began in a small garage in Copenhagen with nothing but a second-hand roaster and a profound obsession for the Ethiopian Yirgacheffe bean. Our founder, Elias Thorne, spent three years traveling the coffee belt before ever selling a single bag.
+                        </p>
+<p>
+                            Today, we remain an independent roastery dedicated to the same principles: transparency in sourcing, meticulous roasting profiles, and the relentless pursuit of the "god shot" of espresso. We treat every harvest as a unique vintage, respecting the terroir and the hands that harvested it.
+                        </p>
+</div>
+<div class="pt-md">
+<div class="h-[1px] bg-primary/20 w-24 mb-md"></div>
+<p class="font-body-md italic text-primary">"Precision is the only path to beauty."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Roasting Philosophy (Bento-style Grid) -->
+<section class="bg-surface-container-low py-xl">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-sm">Roasting Philosophy</h2>
+<p class="font-label-md text-label-md uppercase tracking-widest text-secondary">The Technical Art of the Curve</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md h-auto md:h-[600px]">
+<!-- Large Feature Card -->
+<div class="md:col-span-7 tonal-layer-1 p-lg flex flex-col justify-between group overflow-hidden relative">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary mb-sm" style="font-size: 32px;">thermostat</span>
+<h4 class="font-headline-md text-headline-md mb-md">Loring Smart Roast Technology</h4>
+<p class="font-body-md text-on-surface-variant max-w-sm">
+                                We utilize convection roasting which allows for unprecedented clarity and sweetness. By eliminating scorched beans, we reveal the delicate floral and citrus notes often lost in traditional drum roasters.
+                            </p>
+</div>
+<div class="absolute bottom-0 right-0 w-1/2 h-full opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined scale-[10]" style="font-size: 100px;">timeline</span>
+</div>
+</div>
+<!-- Small Card 1 -->
+<div class="md:col-span-5 tonal-layer-1 p-lg bg-primary-container text-on-primary-container">
+<span class="material-symbols-outlined mb-sm" style="font-size: 32px;">biotech</span>
+<h4 class="font-headline-md text-headline-md mb-md">Sensory Analysis</h4>
+<p class="font-body-md opacity-80">
+                            Every batch undergoes a 5-point cupping protocol. We measure solubility, density, and moisture content to ensure the profile you taste at home matches our Master Roaster’s intent.
+                        </p>
+</div>
+<!-- Small Card 2 -->
+<div class="md:col-span-4 tonal-layer-1 p-lg">
+<span class="material-symbols-outlined text-tertiary mb-sm" style="font-size: 32px;">eco</span>
+<h4 class="font-headline-md text-headline-md mb-md">Direct Trade</h4>
+<p class="font-body-md text-on-surface-variant">
+                            We pay 45% above Fair Trade prices, working directly with estates in Huila and Nyeri to ensure sustainable futures for the farmers.
+                        </p>
+</div>
+<!-- Small Card 3 -->
+<div class="md:col-span-8 tonal-layer-1 p-lg flex items-center gap-lg">
+<div class="w-32 h-32 flex-shrink-0 bg-cover bg-center rounded-full" data-alt="A close-up shot of green, unroasted coffee beans held in a weathered, dark-skinned hand. The lighting is natural and bright, emphasizing the raw texture of the beans and the detailed lines on the palm of the hand. The background is a soft-focus lush coffee plantation in a high-altitude mountain region, capturing the organic and grounded nature of direct trade sourcing." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEEFaGu0YgWWt_AX0x7XoUK_FVNBOQzfwx4eKjFG0MSxycOKxGIizS2m3YVHbUzcR6RBQ8s3RXewUPmvh2nN8Mr0q3UC6iMnu2f5ou-yMecIr7DFOclOxBTQTyprcjn0WZ-619rbZXbFqJkju9cKOqdEF9uxYI9LZCKmDP0fKJbFAi6qaasI5pFjlCRGhntdlxbQErkkbKbwUDurOHdB_vDDvdoM9cw6ms-xoscYG2bUZY9pKoh7lJSUB0rhbg6N99C2nu0nDeTn_R')"></div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-sm">Seasonal Rotation</h4>
+<p class="font-body-md text-on-surface-variant">
+                                Our menu changes with the harvests. We never stock beans older than four months post-harvest to guarantee peak vibrancy and complex acidity.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Meet the Team (Asymmetric Layout) -->
+<section class="py-xl max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-xl border-b border-outline-variant/30 pb-md">
+<h2 class="font-headline-lg text-headline-lg text-primary">The Curators</h2>
+<p class="font-body-md text-on-surface-variant max-w-sm text-right">
+                    The hands behind the craft. A collective of roasters, tasters, and educators.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Curator 1 -->
+<div class="space-y-md group">
+<div class="overflow-hidden aspect-[3/4] tonal-layer-1">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A professional, editorial portrait of a woman in her late 30s with a sharp, modern haircut, wearing a minimalist linen shirt. She is standing in a brightly lit coffee lab with glass beakers and tasting spoons visible in the background. The style is clean and sophisticated, with a warm color temperature and a high-key lighting setup that feels inviting yet professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfp7mLhB7bHVFgNssTXiVorF9QFEpEAFLdsm9Zsyh0YysR1IB5xXj22W8aeacoFL_7QvfRdRwCqG9FGzArA1wyxy9gdZA99IYcQ4W5Pymp-_CGNP7EqnIN1f_gPWXzUOnIztEX2gCJDY1fz_3zWQ5-Cn1xzFmQGT9rzOI5Qupe_6WSWBYvM_CO5MOzdvBnSmtHeSfw2VGTW4Kbuy3S9ByvLwT5pXZ-zYm3Dk7xLq_qYPantVwWtJCApjodJg745kAwNfJBRbVHdoBz"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest">Master Roaster</p>
+<h4 class="font-headline-md text-headline-md">Sanae Hashimoto</h4>
+<p class="font-body-md text-on-surface-variant mt-sm">Specializing in light-roast development and thermal dynamics.</p>
+</div>
+</div>
+<!-- Curator 2 -->
+<div class="space-y-md group mt-12">
+<div class="overflow-hidden aspect-[3/4] tonal-layer-1">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="An editorial portrait of a man with a beard and refined aesthetic, wearing a dark apron over a white shirt. He is holding a porcelain coffee cup with an air of sophisticated expertise. The lighting is moody and low-key, with strong highlights and deep shadows, reminiscent of a luxury lifestyle magazine. The background shows hints of a high-end espresso machine and dark wood paneling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQkpADywkx3ZEbywq_FrwevWmFmD6M3yrhgD1-LgWH1blfafLABfZaKOg7AfudggKYRphfTLG_MWR45-tro62LP3FoH2AlsNYNVdwVQkJBzNChM1iTeVHHbfk1B7RCa5mwoZdv8NMu_anpJfCJ6KU0_x45L-dRdFIv-8I90uEqs5sH45QCo11WWLtic7HkqOc5uwkr_u14TBd9UUzX8AChPvATiApULK7uqLOAMJFL3KiFx02BEauD4pmd1NaP63lma9XjMoNhRykz"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest">Head of Sourcing</p>
+<h4 class="font-headline-md text-headline-md">Elias Thorne</h4>
+<p class="font-body-md text-on-surface-variant mt-sm">A decade spent on the road, building relationships with small-lot producers.</p>
+</div>
+</div>
+<!-- Curator 3 -->
+<div class="space-y-md group">
+<div class="overflow-hidden aspect-[3/4] tonal-layer-1">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A candid, high-end editorial photograph of a young man with glasses, focused intently on pouring a perfect swan latte art pattern. The lighting is soft and even, highlighting the glossy texture of the milk and the rich brown of the espresso. The surrounding environment is a modern, minimalist cafe with marble countertops and minimalist ceramic ware, embodying a calm and artistic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHF3YwFb7rZI3uOrMCYjOHyyJS5_Riai2XnrSPN23ZWxZYr5ynlsjlM7ZlWrNHDnVO_fayrdjWi-wEUaXMwySLIJNMHEbJ-TFsu99nnxd2HHEiGyRvClICPkuakzHahY8Mlq-bjxrJtGhVIJbitPMKkxgG2zgPcbnUzIbAVPiAKbdPCGSKrfaLH5N8yBWU2mkjYPgoDNlc0pFG8_0yYP3O77Omn8KfaD3kqdeZYbo26V1u4T2z7Wlx-u5nEjcMl3PjiSjET51hSNGS"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest">Director of Education</p>
+<h4 class="font-headline-md text-headline-md">Julian Vance</h4>
+<p class="font-body-md text-on-surface-variant mt-sm">Bridging the gap between the roastery and your home kitchen.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-xl bg-primary text-on-primary text-center">
+<div class="max-w-2xl mx-auto px-gutter">
+<h2 class="font-display-lg text-headline-lg mb-md">Experience the Roast.</h2>
+<p class="font-body-lg text-body-lg mb-lg opacity-80">Join our subscription club and receive fresh, seasonal lots delivered to your door every fortnight.</p>
+<div class="flex flex-col md:flex-row justify-center gap-md">
+<button class="bg-primary-fixed text-on-primary-fixed-variant px-xl py-md font-label-md hover:opacity-90 transition-all">Start Subscription</button>
+<button class="border border-on-primary px-xl py-md font-label-md hover:bg-on-primary hover:text-primary transition-all">Visit The Roastery</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full py-xl border-t border-outline-variant/10">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="md:col-span-1">
+<div class="font-display-lg text-headline-md text-primary dark:text-primary-fixed mb-md">Crema &amp; Co.</div>
+<p class="font-body-md text-on-surface-variant">Defining the modern coffee ritual through craft and science.</p>
+</div>
+<div class="flex flex-col gap-sm">
+<h5 class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim uppercase mb-xs">Explore</h5>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Journal</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Wholesale</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h5 class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim uppercase mb-xs">Support</h5>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h5 class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim uppercase mb-xs">Newsletter</h5>
+<p class="font-caption text-caption mb-sm">Subscribe for brew guides and limited releases.</p>
+<div class="flex">
+<input class="bg-transparent border-b border-primary/30 w-full py-sm focus:border-primary outline-none text-body-md" placeholder="Email Address" type="email"/>
+<button class="p-sm text-primary">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-xl pt-md border-t border-outline-variant/10">
+<p class="font-body-md text-body-md text-on-surface-variant/60 text-center md:text-left">© 2024 Crema &amp; Co. Artisanal Roasters. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Subtle scroll reveal effect
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight * 0.8) {
+                    section.classList.add('opacity-100');
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize state
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach((s, i) => {
+                if(i > 0) {
+                    s.style.transition = 'all 1s cubic-bezier(0.16, 1, 0.3, 1)';
+                    s.style.transform = 'translateY(20px)';
+                    s.classList.add('opacity-80');
+                }
+            });
+        });
+    </script>
+</body></html>

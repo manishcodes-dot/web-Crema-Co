@@ -6,24 +6,70 @@ import './ProductDetail.css';
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
-const STITCH_IMAGES = {
-  'obsidian': 'https://lh3.googleusercontent.com/aida-public/AB6AXuC8Sd7y0-eUxIGd-dwtCG3RNUaJ73IEMI91uwMVOzCuD9d-hvWfxRgj3aq6bChrod4EsHQscAoY9glffpIkQKwlaXfAtibpoml9V1WG6mGPN7LOtSiANvLVpOal0V2FJXJSujr-EIH0JbGKC3aO4aCvrjj7CzUlyH7_gAAICvhq-Hfr6c1EdEifHFCrU9g7HhS2e9PbbdRrBD8oo4nuaysDfINIdLS2jE9Y7cLtnnc8cBDhzxdvugFCH0ESaw3ToBkLJY-esvYyFNi4',
-  'cortado': 'https://lh3.googleusercontent.com/aida-public/AB6AXuCMB-hJ74NQ9SfrtzVBFZ419686vrdCYGI4-iGRRhHpCJLH3uzcb80X6yuJNVgKPBSz2xXsYCdKEa6GMF29jKFzbCaIQ438tpKAqyw2YbbCjKmHZa8SyaxuQ8UyKLYbogUS6yqJyeW-WMRrqCwz1nthIROHNCf0QTPPwha3XIZ-gEgMn8fdCABG12-iT2tTXY9A2uctD6-mzYTxfYHc7iNYKBf0g53sVhcMqnxoRAJjoiF4cITD4TEOcFaUt65UWeZvaQkCkYmxUbEU',
-  'ethiopian': 'https://lh3.googleusercontent.com/aida-public/AB6AXuC5KPsfeFqkDltw69v5PBc5DMD0CMeBIYy84z-WPKNqyxuSOiOjSPWs3LwFoA_zZYgtPQ2acDTf9DnWA4ken_iMsHIIkW49gc2W1oeenHa6cGXLlGeKSKFYxXQM5BakAFL1tRepSlLmyRTzJAMRYO2j8plnsmBP7XZQr53jiuRQEz2lX6NSEdRw3EkYitQPINqVnhS1cNTed7-Ku88pwelyDiBwLeEb7cUPjv2GqVFkukJHLR68SsDjPk8kHqkgJ6MJT8QygXDt1EeQ',
-  'double': 'https://lh3.googleusercontent.com/aida-public/AB6AXuBtavCCE_rXaeEjxjGK9l-MS4vIt8LSmozNdPQvvgbwEo2DixEHV3vWLOTll8gN3pkDn8C4qiELVAmy3A161qmFdCW7KqtBVgUHwpwJWZc0Ru5LbAfny0xY03NCMeGXw1jq_G9wZLO8TrmnFXMpkNIdCwQMyqI4t8LaeFk_0TG2q3gt-RT0KMUM0SZ7qcTj39PQnyFx7ALB4QYk_h-fv-X2Jchquyp4xJmb-DFwboGynlCiczX8M2XFj3gKbf_52z1EB58EXCMIGIxL',
-  'oat': 'https://lh3.googleusercontent.com/aida-public/AB6AXuDRz2WVSfZq-k0SgfL4Ky1iOogH_Va-rejAtINN3IFdQP0Xqe21tOZEskJ5JM0rq5VL_IQZ5s7W0rZ3BKhLV9r_AODlBcJssK2N8HKTWXP3BMRl-k3Yy5nRUzc0je4OilvueGxcqkovMC34igqxlc1iwvRKizJAHDrOqY6yqiZ_t0RXk500z4lcqBfQrB2DdQ-Aw-oQN-ICL_pn7xqsIY7Q7F4v0KyXbA0b650HXcyw3pJ3UH2WIweBW_0nNAFfCLVgo-gmoNAFE-rM',
-  'cold': 'https://lh3.googleusercontent.com/aida-public/AB6AXuBYC6HUH7jgkB5USXNDKhnp2wTY6SP5iSErW1xdQgVOZpxHkkkSvXj44y2XoG_t0R7UUvz-4xVUo1Y7kUnR6kCs2EaR_SCCskRm5Edu9olo4jNe4OkXF8l1jRteSSydv_TqCeN_rQvy-6fBvAHDnLFCfNSRLpdCxXT2XD1HkPh2MpwAeYeKxydWc6Ymh8HyylE-6xq2fNLjxcqlfueKTxPiez5nmQOh5TpCjgIZ4PfRikH7LvRk6IWL9N0eMWodCEKKu6Vcu_eRyhs1',
-  'signature': 'https://lh3.googleusercontent.com/aida-public/AB6AXuDvXjtdslRdMjfzgZKw7PCGxE_T64atnqDG4vOLwvYbVTO_4qG9EjE7S3JeAfmjCuk3jmx54m6xVrCELP4mst4UB9heLt37DdK25mH1ChPQUDWnJ5I-OietFvxHPDTNXnpAMrNG8AQph5l3tVFllV5iNynrvCRlHqBa1a_H1Od9MOTaKBzwrrlKPjxpOQlA_ZRWXKYbL_30eq1eMsspcDragTwb-h3ZZtpf4Pe_zh-NNV-4zWtL4nozs9eK_Z3n8HjKEIJxBXf925JU',
-  'gold': 'https://lh3.googleusercontent.com/aida-public/AB6AXuDvXjtdslRdMjfzgZKw7PCGxE_T64atnqDG4vOLwvYbVTO_4qG9EjE7S3JeAfmjCuk3jmx54m6xVrCELP4mst4UB9heLt37DdK25mH1ChPQUDWnJ5I-OietFvxHPDTNXnpAMrNG8AQph5l3tVFllV5iNynrvCRlHqBa1a_H1Od9MOTaKBzwrrlKPjxpOQlA_ZRWXKYbL_30eq1eMsspcDragTwb-h3ZZtpf4Pe_zh-NNV-4zWtL4nozs9eK_Z3n8HjKEIJxBXf925JU'
-};
-
-const getStitchImage = (name) => {
-  if (!name) return STITCH_IMAGES.signature;
-  const lower = name.toLowerCase();
-  for (const [key, val] of Object.entries(STITCH_IMAGES)) {
-    if (lower.includes(key)) return val;
+const MOCK_PRODUCTS = {
+  'cortado': {
+    name: 'Cortado',
+    price: 4.50,
+    category: 'Hot Coffee',
+    description: 'Equal parts double espresso and silky steamed milk. Balanced and intense.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBidxf-HZKj_V-kG5GbtHXdnYU3toJNzVHn1pJNfOTwyoIn6h44hTsTHvAy9oideL5s1BrTMXwq28A40p342ydMEtDA-4qbeg_qMXYEv-81f6_-UFGldb_I2mgeFFGjnlrGY8EiFU_1udsR3_kV2TDZ9e_cNlURraF8oG0vQgzQKuhRknWz1hsnSzZvzEybTm_G8RgAO2n1HFdJFSt6vlF-puM9jJeszB16sovj5ZtmJSE0r-2zglO2s7CzqKX5y0Cs-86xDoUhM2Rj'
+  },
+  'nitrogen-cold-brew': {
+    name: 'Nitrogen Cold Brew',
+    price: 6.00,
+    category: 'Cold Coffee',
+    description: 'Velvety texture with notes of dark chocolate and toasted hazelnuts.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBEpuIcKafi662oA-p0oSI2bQ2vid3GXU8rYndYrSO_e78wzPP3agxJXdyoXO0MsNPgp5Ufo9uMokLiCuAcV4mGG4FKTsgRh-lRWFG11KifyD9j8gTUdPwqZMxPQ89QHZm-EzGhytqsUfzSBB2r2bQvRFpKfzskusFYGqKy9KyReNVlQa5An1RLk_xdQCW3choy8_2eqQwh5lqQmz35nfUdZmXTznHWhpQBK-CnmhPrVtygbD1-BQLosshpXAKyhhLnNFW6SYEA96P3'
+  },
+  'salted-honey-croissant': {
+    name: 'Salted Honey Croissant',
+    price: 5.25,
+    category: 'Pastries',
+    description: 'Laminated dough with locally sourced honey and Maldon sea salt flakes.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCszD1czMbJwo9XnvhhBwkuP_18PvI3jTOT2sIRjywgbQtOJKKb5hRqB5mVcRjM8rxS2bKtx1SWaCjEE6ldMZBDrizrbUvbBYjb9ReUSUh5FRL_r7npquPZt4UPXy0kZAOGUTZR13Ws3_vlpeoexAEHsGvN5iWc0trpO2CfHBSpkH5BhyzKQeocweYZghCqeRoi4UAnJNKbD8UWx36L2LHkesUSewrip3V5t45C7kDmip7T0uO9OjjfDdzREjS0iSAy2QJUhJKL4u_t'
+  },
+  'ethiopian-yirgacheffe': {
+    name: 'Ethiopian Yirgacheffe',
+    price: 7.00,
+    category: 'Hot Coffee',
+    description: 'Tea-like body with vibrant jasmine floral notes and citrus acidity.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDdRFZsk86LmnAmLNQJCqLOYNGmK-fKuDKTVWx33c9a8NgvFJdDPspRD3N09K3rQdjTSqcf_kxGPglm60gMs9lREkL_Y1Nn5BP0Vu4o1Y9I0t0qnrXT39G26it2tyMJeov8rhMbmSXS02juQLWGJE-aHI0WJHsFQAN0iWVG77J0KC9c-yFtoAdyo-o8hq0Rx_RqazIwAlum1KvbHv4_LIxSqBeyVkKDievdbtNc6Ri44lxWVs_iM58_NatGvwOpKcd0vN47IgBO3ME8'
+  },
+  'avocado-sourdough': {
+    name: 'Avocado Sourdough',
+    price: 12.00,
+    category: 'Pastries',
+    description: 'House-made sourdough, hass avocado, 6-minute egg, and chili threads.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA2Q-tjWihFz8Y6aG_5HFNH1MdfqwOGTgp3Z2e6vg4-UDauPuIojd-A1YqZ0v9JFhBSpufWAXDa1VVVKm52sboQv5zvJRBz0JxMGxlRhq3s05hSfiW5kRCuiuZjZyfTzTNKlTqsm6G3LB71P3UNcNQ4k2SOYH4YqY2hMdoJEu3XhwIzVyrOdYkd8qgTtBBFV25oDfNfZKwXWzeqrGgnBdCAohVZvIhpaHRafi6nJXM3af8M9uNzHOebuvJkdtYhEkvNx4QnFCN5oozn'
+  },
+  'iced-ceremonial-matcha': {
+    name: 'Iced Ceremonial Matcha',
+    price: 6.50,
+    category: 'Cold Coffee',
+    description: 'Stone-ground Uji matcha whisked with oat milk and a touch of agave.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCALfCWAIAHegNacuqWlUGAtvDD5vbQ2u_lzAHcm6ew6cYQ7MGmbe6SixJB2BYyojyUm7yQC1LBUgW-GPZnGmEZrpEilm6rYOnvwOijcdAuSJPqBv5y_UmRrSQyUDpX1BtqadU_mOEN-mOqVp2jlc-xQPgnRECOjldhmTy6hzruGZ25nV9DarpKO_xUyfOct85qhfEZ6X5UKBdenQ4urNQYzZ72MgubSaP5fjzZZFVHwtaM4Ppu-I-D8UDZPoypySbrSE-cu488YN_8'
+  },
+  'yirgacheffe-floral': {
+    name: 'Yirgacheffe Floral',
+    price: 24.00,
+    category: 'Ethical Ethiopia',
+    description: 'Vibrant floral jasmine aromas paired with a crisp lemon zest acidity and tea-like finish.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBMwNH1ezn7xRkZIA92KD6DvIWGaQoqy27VzFbgdVUqzpXGBNCe9sxbw1RR3jx_wl7hFDlWA7_XLt1Hp82UeYDSi8iL7Go_mDo8JJyGO4HForu3qAQ9IqwSw0AQeC5U1_NyxakiSuOFb7L6TMslA7_7iKfMhR7xJ2SAXfcfyYWMKjHSuukcaO5GqFQ6cuxWgZ5DYfYsuum-yo7pkICQ5ZgCDn_79x50txpqXbCK8Ah9db84ZmGpkNZTbDJzMuL5qAqPhZc0hd1xzere'
+  },
+  'velvet-espresso': {
+    name: 'Velvet Espresso',
+    price: 28.00,
+    category: 'Dark Roast',
+    description: 'Indulgent notes of dark chocolate and toasted walnut with a smooth, heavy body.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDrXB5YSSiTkUZxmpuVgCI0c1G3PgqexdOY3mBwPdfeE4b-_liX7bdSP6EBr_bzBWgCDGb0C6YCAtJD-MfmhqUZhctBPOlOIQ8pg1i-yppUJ4cQn2jEDI6Jvx0DLphDFd7XVeQu2p8CtvjuSiVmisl26yhIBtwlhh0QIsUX2qBH2by3sv8vwtn6R4DKewC6wDwHXRewDPH3fmAzwEg_kE-ZjP1SFPVXqcgw8MPwJod_kEDk457mR1u5qkyhnh8WvEpwP1Bze0T5BYZ3'
+  },
+  'sumatran-earth': {
+    name: 'Sumatran Earth',
+    price: 22.00,
+    category: 'Single Origin',
+    description: 'A bold, smoky profile with deep molasses sweetness and a lingering volcanic finish.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA2q3c04deMvZvUP0icNIvex_wAKC-JotalSMBMZE535WxDNcrp5ycKTVS_H9Aq6pExUUxwmPgPI9jfrQu32NEc2_zHZjyKtTJV3pUeWTh1fhKPaWrl4ADSjA3H_3ndZdSApNvIt1SBTNqvsRgxQ__nSEwGEjIBF748yncfQi4HrNlzw3eyDFMXUB3LN50Sn0fSF08OvshAxw_xvOgn4DrkkhLVPubC5ehlaEYDm1cLt1iZVLJJNE444N6yOo0z855wHlw18maQ-U4V'
   }
-  return STITCH_IMAGES.signature;
 };
 
 export default function ProductDetail() {
@@ -36,35 +82,20 @@ export default function ProductDetail() {
   const { addItem } = useCart();
 
   useEffect(() => {
+    // Scroll to top on mount
+    window.scrollTo(0, 0);
+
     const fetchProduct = async () => {
       try {
         const { data } = await axios.get(`${API}/products/${slug}`);
         setProduct(data);
       } catch {
         // Fallback for demo purposes
-        if (slug === 'signature-gold-latte' || slug === 'velvet-cortado' || slug === 'ethereal-ethiopian' || slug === 'the-obsidian-roast' || slug === 'double-espresso' || slug === 'oat-milk-latte' || slug === 'cold-brew-concierge') {
-          const mockName = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-          setProduct({
-            _id: slug,
-            name: mockName,
-            slug: slug,
-            description: mockName.includes('Gold') 
-              ? 'Our house-specialty double espresso infused with honey, Madagascar vanilla, and topped with a delicate shimmer of edible 24k gold.'
-              : 'Handcrafted signature recipe using the finest single-origin beans.',
-            price: mockName.includes('Gold') ? 6.75 : mockName.includes('Cortado') ? 5.50 : mockName.includes('Obsidian') ? 18.00 : mockName.includes('Ethiopian') ? 22.00 : mockName.includes('Double') ? 4.00 : mockName.includes('Oat') ? 6.25 : 16.00,
-            category: mockName.includes('Obsidian') || mockName.includes('Ethiopian') ? 'Pour Over' : mockName.includes('Cold Brew') ? 'Seasonal' : 'Signature Series'
-          });
-        } else {
-          // Default fallback
-          setProduct({
-            _id: 'default',
-            name: 'Signature Gold Latte',
-            slug: 'signature-gold-latte',
-            description: 'Our house-specialty double espresso infused with honey, Madagascar vanilla, and topped with a delicate shimmer of edible 24k gold.',
-            price: 6.75,
-            category: 'Signature Series'
-          });
-        }
+        const fallback = MOCK_PRODUCTS[slug] || MOCK_PRODUCTS['cortado'];
+        setProduct({
+          _id: slug,
+          ...fallback
+        });
       }
     };
     fetchProduct();
@@ -85,7 +116,7 @@ export default function ProductDetail() {
       _id: product._id,
       name: product.name,
       price: finalPrice,
-      image: getStitchImage(product.name),
+      image: product.image,
       size: 'standard',
       quantity: 1
     }, {
@@ -100,16 +131,15 @@ export default function ProductDetail() {
   if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background" id="product-loading">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-caramel"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
       </div>
     );
   }
 
   const finalPrice = product.price + (extraEspresso ? 1.50 : 0);
-  const productImage = getStitchImage(product.name);
 
   return (
-    <div className="pt-20 min-h-screen bg-background text-on-background selection:bg-caramel/20" id="product-detail-page">
+    <div className="pt-20 min-h-screen bg-background text-on-background selection:bg-primary-fixed selection:text-primary" id="product-detail-page">
       <div className="max-w-container-max mx-auto flex flex-col md:flex-row min-h-[calc(100vh-80px)]">
         {/* Left: Hero Image Section */}
         <section className="w-full md:w-1/2 relative bg-surface-container-low flex items-center justify-center p-stack-lg">
@@ -117,12 +147,8 @@ export default function ProductDetail() {
             <img 
               className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" 
               alt={product.name}
-              src={productImage}
+              src={product.image}
             />
-          </div>
-          {/* Decorative Steamer element for brand flair */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-32 bg-caramel/10 rounded-full overflow-hidden hidden lg:block">
-            <div className="steamer-progress w-full h-1/2"></div>
           </div>
         </section>
 
@@ -134,7 +160,7 @@ export default function ProductDetail() {
             <span className="text-caption font-caption uppercase tracking-widest">{product.category || 'Coffee'}</span>
           </nav>
           
-          <h1 className="font-display-lg text-display-lg text-on-surface mb-stack-sm leading-tight">
+          <h1 className="font-display-lg text-display-lg text-primary mb-stack-sm leading-tight">
             {product.name}
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-md">
@@ -144,7 +170,7 @@ export default function ProductDetail() {
           <div className="space-y-stack-lg">
             {/* Milk Selection */}
             <div>
-              <label className="font-label-md text-label-md text-on-surface block mb-stack-sm">MILK CHOICE</label>
+              <label className="font-label-md text-label-md text-primary block mb-stack-sm uppercase tracking-wider">MILK CHOICE</label>
               <div className="flex flex-wrap gap-stack-sm">
                 {['Whole', 'Oat', 'Almond'].map((option) => {
                   const isSelected = milk === option;
@@ -152,10 +178,10 @@ export default function ProductDetail() {
                     <button
                       key={option}
                       onClick={() => setMilk(option)}
-                      className={`px-stack-md py-stack-sm border rounded-lg font-label-md text-label-md transition-all ${
+                      className={`px-stack-md py-stack-sm border rounded-lg font-label-md text-label-md transition-all cursor-pointer ${
                         isSelected 
-                          ? 'border-caramel bg-caramel text-white' 
-                          : 'border-outline-variant hover:border-caramel text-on-surface-variant'
+                          ? 'border-primary bg-primary text-white' 
+                          : 'border-outline-variant hover:border-primary text-on-surface-variant'
                       }`}
                     >
                       {option}
@@ -168,8 +194,8 @@ export default function ProductDetail() {
             {/* Sweetness Slider */}
             <div>
               <div className="flex justify-between items-center mb-stack-sm">
-                <label className="font-label-md text-label-md text-on-surface">SWEETNESS LEVEL</label>
-                <span className="text-caption font-caption text-caramel font-bold" id="sweetness-val">
+                <label className="font-label-md text-label-md text-primary uppercase tracking-wider">SWEETNESS LEVEL</label>
+                <span className="text-caption font-caption text-primary font-bold" id="sweetness-val">
                   {getSweetnessText(sweetnessVal)}
                 </span>
               </div>
@@ -193,7 +219,7 @@ export default function ProductDetail() {
             <div className="bg-surface-container-low p-stack-md rounded-xl border border-outline-variant/20">
               <label className="flex items-center justify-between cursor-pointer group">
                 <div className="flex items-center gap-stack-md">
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-caramel shadow-sm">
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
                     <span className="material-symbols-outlined">coffee</span>
                   </div>
                   <div>
@@ -202,7 +228,7 @@ export default function ProductDetail() {
                   </div>
                 </div>
                 <input 
-                  className="w-5 h-5 rounded border-outline-variant text-caramel focus:ring-caramel/20 cursor-pointer" 
+                  className="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary/20 cursor-pointer" 
                   type="checkbox"
                   checked={extraEspresso}
                   onChange={(e) => setExtraEspresso(e.target.checked)}
@@ -218,7 +244,7 @@ export default function ProductDetail() {
               </div>
               <button 
                 onClick={handleAdd}
-                className="bg-caramel hover:brightness-110 active:scale-95 text-white px-12 py-4 rounded-full font-label-md text-label-md transition-all shadow-md flex items-center gap-2 group"
+                className="bg-primary hover:opacity-90 active:scale-95 text-on-primary px-12 py-4 rounded-full font-label-md text-label-md transition-all shadow-md flex items-center gap-2 group cursor-pointer"
                 id="add-to-cart-btn"
               >
                 {added ? 'Added to Order' : 'Add to Order'}
