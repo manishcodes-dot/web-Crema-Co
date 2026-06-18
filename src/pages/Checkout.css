@@ -1,0 +1,6 @@
+.custom-shadow {
+  box-shadow: 0 4px 20px rgba(74, 52, 40, 0.08);
+}
+.steamer-progress {
+  background: linear-gradient(to top, #885202 0%, transparent 100%);
+}

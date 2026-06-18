@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#f2dfd3",
+                        "inverse-primary": "#c9c6c0",
+                        "inverse-surface": "#392e26",
+                        "inverse-on-surface": "#ffede3",
+                        "primary": "#605e59",
+                        "outline": "#79776f",
+                        "primary-fixed-dim": "#c9c6c0",
+                        "tertiary-container": "#ffefe2",
+                        "on-surface-variant": "#484740",
+                        "on-surface": "#231a13",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdcbc",
+                        "primary-container": "#f5f1ea",
+                        "surface-container-low": "#fff1e9",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#683d00",
+                        "secondary": "#73594b",
+                        "surface-container": "#feeade",
+                        "on-secondary-container": "#795f51",
+                        "on-background": "#231a13",
+                        "outline-variant": "#cac6bd",
+                        "secondary-fixed": "#ffdbca",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#6f6d68",
+                        "on-tertiary-container": "#9a6115",
+                        "on-tertiary-fixed": "#2c1700",
+                        "surface-dim": "#ead6cb",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#f2dfd3",
+                        "surface": "#fff8f5",
+                        "tertiary": "#885202",
+                        "on-secondary-fixed": "#29170d",
+                        "secondary-container": "#ffdbca",
+                        "on-primary-fixed": "#1c1c18",
+                        "surface-bright": "#fff8f5",
+                        "on-primary-fixed-variant": "#484742",
+                        "surface-tint": "#605e59",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#f8e4d9",
+                        "primary-fixed": "#e6e2db",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fff8f5",
+                        "secondary-fixed-dim": "#e1c0af",
+                        "on-secondary-fixed-variant": "#594235",
+                        "tertiary-fixed-dim": "#ffb86a",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Sora"],
+                        "headline-lg": ["Sora"],
+                        "display-lg": ["Sora"],
+                        "label-md": ["Sora"],
+                        "body-md": ["Sora"],
+                        "display-lg-mobile": ["Sora"],
+                        "body-lg": ["Sora"],
+                        "headline-md": ["Sora"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #fff8f5;
+            color: #231a13;
+        }
+        .tonal-layer {
+            box-shadow: 0 4px 20px rgba(74, 52, 40, 0.05);
+        }
+        .steamer-progress {
+            background: linear-gradient(to right, transparent, #885202, transparent);
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: steamer-flow 3s infinite linear;
+        }
+        @keyframes steamer-flow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed w-full top-0 left-0 z-50 bg-surface-bright dark:bg-surface-container border-b border-outline-variant/30 flat no shadows">
+<nav class="flex justify-between items-center px-margin-desktop py-unit max-w-container-max mx-auto h-20">
+<div class="text-headline-md font-headline-md font-bold text-secondary dark:text-secondary-fixed">
+                Crema & Co
+            </div>
+<div class="hidden md:flex gap-stack-lg items-center">
+<a class="text-secondary dark:text-secondary-fixed font-bold border-b-2 border-secondary font-label-md text-label-md transition-all duration-200" href="#">Menu</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-tertiary dark:hover:text-tertiary-fixed transition-colors duration-300" href="#">About</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-tertiary dark:hover:text-tertiary-fixed transition-colors duration-300" href="#">Locations</a>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="cursor-pointer transition-all duration-200 text-primary p-2">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="md:hidden p-2 text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative w-full h-[870px] flex items-center overflow-hidden px-margin-desktop">
+<div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="z-10 space-y-stack-lg">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">
+<span class="font-label-md text-label-md">PREMIUM SELECTION</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight max-w-xl">
+                        The Art of the Roast
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                        Experience the alchemy of heat and time. Each bean is hand-selected and roasted to peak aromatic expression.
+                    </p>
+<div class="flex flex-wrap gap-stack-md pt-4">
+<button class="px-8 py-4 bg-secondary text-on-secondary rounded-lg font-label-md text-label-md hover:scale-[1.02] transition-transform shadow-lg shadow-secondary/20">
+                            Order Now
+                        </button>
+<button class="px-8 py-4 border border-secondary text-secondary rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors">
+                            Explore Menu
+                        </button>
+</div>
+</div>
+<div class="relative h-[600px] w-full hidden md:block">
+<div class="absolute inset-0 rounded-2xl overflow-hidden tonal-layer">
+<img class="w-full h-full object-cover" data-alt="A cinematic, close-up shot of dark roasted coffee beans falling in slow motion against a warm, sunlit background. The lighting is soft and golden, accentuating the oily sheen of the beans. The scene is set in a modern, minimalist roastery with clean lines and warm wood textures, evoking a sense of premium craftsmanship and artisanal quality. The overall mood is luxurious and inviting, with a palette of deep browns and soft creams." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_ChCDJiC9JzYwhPUUd58LwCYCgrGneqe0JOcPrz4VjU2oRQ99vKy0fpxnSDk6f1RD5JYh3LBE1A4oeHjPs7iedlBeoRAhtle1MK_j5PVNvyeipn_gn4zknwvY3Wgj254UalG-Ty81Gqh085BdonagmpEuAhevA_K0Wn7hsK4PP4YklCYEe-9H55-KGS9Bo7pT3UL-HZbOK6AdXSIvz3PUj4pMOlNXk45qpZbJBzIrMBdAY3nAwh6wogkkkk5yd04BK90HX2TLfAdl"/>
+</div>
+<!-- Decorative Element: The Steamer -->
+<div class="absolute -bottom-4 -left-4 w-48 h-48 bg-primary-container rounded-xl p-6 flex flex-col justify-end tonal-layer border border-outline-variant/30">
+<span class="font-label-md text-label-md text-tertiary mb-2">NOW BREWING</span>
+<p class="font-body-md text-body-md font-bold text-on-surface">Vesuvius Dark</p>
+<div class="relative h-1 w-full bg-surface-variant mt-4 overflow-hidden rounded-full">
+<div class="steamer-progress"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Accent -->
+<div class="absolute -right-24 top-1/4 w-[600px] h-[600px] bg-secondary-container/30 rounded-full blur-[120px] -z-10"></div>
+</section>
+<!-- Signature Roasts Section -->
+<section class="py-section-gap px-margin-desktop bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-stack-lg gap-stack-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Our Signature Roasts</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Curated profiles for the discerning palate.</p>
+</div>
+<a class="text-tertiary font-label-md text-label-md flex items-center gap-2 hover:underline" href="#">
+                        View Tasting Guide <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Roast 1: Midnight Velvet -->
+<div class="group flex flex-col bg-surface border border-outline-variant/20 rounded-xl overflow-hidden transition-all hover:border-tertiary/40 hover:shadow-xl hover:shadow-secondary/5">
+<div class="aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A top-down, minimalist shot of a bag of 'Midnight Velvet' coffee beans on a textured stone surface. Next to it is a single white ceramic cup filled with dark, rich coffee with a perfect crema. The scene is bathed in cool morning light, creating a moody yet clean aesthetic. Espresso browns and creamy whites dominate the palette, emphasizing premium quality and slow living." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEXYeXJ9NOS_JyZDrKbAQ18T33pb2tDhkDdZEi4q-aR2jk-sTZPgbjjs7iq5l9H7BpVpvgjBiKzqu6e7Ft7IOb1LnUcuDVkarCOIfD14HQOOkNT0Qxq09AAe0eLyTmUfHjPwI-qvICoCXi_XjSNqfpixwMxq63cM3lnF_WpgzGxqbETp6fuZgJyT2qHgC6u5_uXsDJXfh_8kZHQb6044D6EsKxfU6liKlOA_WNvHfQFdUfcR8BX5DLGswiXRn4Tqdm3O4kxHd_Q3RB"/>
+</div>
+<div class="p-stack-lg space-y-stack-sm">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary" data-icon="dark_mode">dark_mode</span>
+<span class="font-label-md text-label-md px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded">DARK</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Midnight Velvet</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Indulgent notes of dark chocolate and toasted walnut with a smooth, heavy body.
+                            </p>
+<button class="w-full mt-stack-md py-3 font-label-md text-label-md border-t border-outline-variant/30 text-secondary group-hover:text-tertiary transition-colors flex items-center justify-center gap-2">
+                                Add to Bag <span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Roast 2: Ethiopian Mist -->
+<div class="group flex flex-col bg-surface border border-outline-variant/20 rounded-xl overflow-hidden transition-all hover:border-tertiary/40 hover:shadow-xl hover:shadow-secondary/5">
+<div class="aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A bright, high-key photograph of a glass pour-over coffee carafe with light-colored coffee, surrounded by dried jasmine flowers and lemon zest. The setting is a sun-drenched marble countertop. The image conveys a light, floral, and airy atmosphere, reflecting the 'Ethiopian Mist' flavor profile. Soft pastel tones and warm cream hues create a refreshing and elegant visual." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIqFuDRTf4Yrs7AWGk6ZYDsSBWmwtDqdnAJ-bYYeBepufdOw38OR25Y4vV_e2YhiZhT5wKn6lu0SfsEGDntqMqFaNExPxB4J8oL2ZFb1DUw5KV-b64q_J9DDLtguz2dy_Zrsi2BEBNgbAq9xsDAOIZH3lZrFLyM2eP9EpF_VeaBajqgmGb6kKQ1ErIdbZBKqB9mjETThxQlPuGS6jynSCRPl5RrRGtTxAuyCFExQGvzwk429z-AqsI7O36Ac69Syut55N71xn39UU4"/>
+</div>
+<div class="p-stack-lg space-y-stack-sm">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary" data-icon="filter_drama">filter_drama</span>
+<span class="font-label-md text-label-md px-2 py-0.5 bg-tertiary-container text-on-tertiary-container rounded">LIGHT</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Ethiopian Mist</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Vibrant floral jasmine aromas paired with a crisp lemon zest acidity and tea-like finish.
+                            </p>
+<button class="w-full mt-stack-md py-3 font-label-md text-label-md border-t border-outline-variant/30 text-secondary group-hover:text-tertiary transition-colors flex items-center justify-center gap-2">
+                                Add to Bag <span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Roast 3: Vesuvius Dark -->
+<div class="group flex flex-col bg-surface border border-outline-variant/20 rounded-xl overflow-hidden transition-all hover:border-tertiary/40 hover:shadow-xl hover:shadow-secondary/5">
+<div class="aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A dramatic shot of coffee beans being roasted in a copper drum, with small embers and a soft hazy smoke rising. The lighting is warm and intense, focusing on the rich, mahogany color of the beans. The background is a dark, industrial kitchen space. The image is bold and powerful, capturing the intense roasting process of 'Vesuvius Dark' with a palette of deep oranges and smoky browns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaiAyQ68p-lsUt-ZlGlJeZZzuo-2YDnpNN_EsOzG5WinJlEzsSPKpGIcXmaRdihz3NCZg564esNSdf_b8KNYTo8O2hOEWBdCtkxyCEU85jiYNNKu2VHU9ZGyaCAygdTBQ2FY-r2ulR1DOph9v3afxisI_vSk1s8f5UaZhnJlTCH9DEYWRd1LKpKbebwRQgibEwwiijt_xHkELzdnJrCSG_Eew8zcHqVbCTxpXYw4pjGlOd1YAM6eS3lggoCjhetfqK2AhyzCyBIDSf"/>
+</div>
+<div class="p-stack-lg space-y-stack-sm">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-error-container" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-label-md text-label-md px-2 py-0.5 bg-error-container text-on-error-container rounded">INTENSE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Vesuvius Dark</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                A bold, smoky profile with deep molasses sweetness and a lingering volcanic finish.
+                            </p>
+<button class="w-full mt-stack-md py-3 font-label-md text-label-md border-t border-outline-variant/30 text-secondary group-hover:text-tertiary transition-colors flex items-center justify-center gap-2">
+                                Add to Bag <span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Craftsmanship / Bento Section -->
+<section class="py-section-gap px-margin-desktop overflow-hidden">
+<div class="max-w-container-max mx-auto bento-grid">
+<div class="col-span-12 md:col-span-8 bg-primary-container rounded-3xl p-stack-lg flex flex-col justify-between relative overflow-hidden min-h-[400px]">
+<div class="z-10">
+<h2 class="font-headline-lg text-headline-lg text-on-surface max-w-sm">Engineered for the Perfect Pour</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-stack-md max-w-xs">
+                            Our roasting process uses precision thermal monitoring to ensure consistency in every batch.
+                        </p>
+</div>
+<div class="z-10 flex gap-stack-lg">
+<div class="flex flex-col">
+<span class="font-display-lg text-display-lg text-secondary">0.1°</span>
+<span class="font-label-md text-label-md text-on-surface-variant">TEMP PRECISION</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display-lg text-display-lg text-secondary">48h</span>
+<span class="font-label-md text-label-md text-on-surface-variant">REST PERIOD</span>
+</div>
+</div>
+<div class="absolute right-0 bottom-0 w-1/2 h-full hidden lg:block">
+<img class="w-full h-full object-contain opacity-40 mix-blend-multiply" data-alt="A clean, scientific illustration of a single coffee bean being analyzed with holographic light lines. The style is technical and minimal, using thin lines and a monochromatic palette of creams and browns. It represents the engineering and precision behind the roasting process in a sophisticated, modern art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSdo4uPCKGXsc8Muk0Txlc3-qEfRKppsJs-9-C0Q9cPlBX4JZpWv2QyGVhgBQx1cW1yPAJcNyXnnScWok8sLG28VpS2gJtKwDB-2CC03J7CbB89Noidg3GOCXZOYQlmv_T3sTiLobSRFZrDGDgUgOnLXUYweqpnlygjQAGcjFCEWKH89W6sMGYpWTIc7aDWAKrpEDBEF5KbXSBeGe0JRJMDDih9AvQWGdURUds3B8hKB4j4vXZh8ug4Nxo0Kl8PhUty1N84MK8o2Vu"/>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 bg-secondary text-on-secondary rounded-3xl p-stack-lg flex flex-col justify-center items-center text-center space-y-stack-md tonal-layer">
+<span class="material-symbols-outlined text-[48px]" data-icon="eco">eco</span>
+<h3 class="font-headline-md text-headline-md">100% Traceable</h3>
+<p class="font-body-md text-body-md opacity-80">
+                        We partner directly with farmers in 12 countries to ensure fair wages and sustainable soil.
+                    </p>
+<button class="mt-4 px-6 py-2 bg-on-secondary text-secondary rounded-full font-label-md text-label-md">
+                        Learn More
+                    </button>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="py-section-gap px-margin-desktop bg-surface-container-high">
+<div class="max-w-container-max mx-auto text-center space-y-stack-lg">
+<h2 class="font-display-lg text-display-lg text-on-surface">Freshness, Delivered.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Join our Roaster's Circle for exclusive access to small-batch micro-lots and early-bird notifications.
+                </p>
+<form class="max-w-md mx-auto flex flex-col md:flex-row gap-4">
+<input class="flex-1 px-6 py-4 rounded-lg bg-surface border border-outline-variant/30 focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none transition-all" placeholder="Enter your email" type="email"/>
+<button class="px-8 py-4 bg-secondary text-on-secondary rounded-lg font-label-md text-label-md hover:bg-secondary/90 transition-colors" type="submit">
+                        Subscribe
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bottom-0 bg-surface-container-highest dark:bg-inverse-surface mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-stack-lg gap-gutter max-w-container-max mx-auto">
+<div class="space-y-4 text-center md:text-left">
+<div class="text-headline-sm font-headline-md text-secondary dark:text-secondary-fixed">Crema & Co</div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface max-w-xs">
+                    © 2024 Crema & Co. Artisanal Coffee Roasters.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-stack-lg">
+<a class="font-body-md text-body-md text-on-surface-variant/80 dark:text-on-surface-variant hover:text-tertiary dark:hover:text-tertiary-fixed underline transition-all" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-on-surface-variant/80 dark:text-on-surface-variant hover:text-tertiary dark:hover:text-tertiary-fixed underline transition-all" href="#">Facebook</a>
+<a class="font-body-md text-body-md text-on-surface-variant/80 dark:text-on-surface-variant hover:text-tertiary dark:hover:text-tertiary-fixed underline transition-all" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant/80 dark:text-on-surface-variant hover:text-tertiary dark:hover:text-tertiary-fixed underline transition-all" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for smooth scrolling or hover effects could be added here
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'scale(0.98)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,146 @@
+/* ============================================
+   CREMA & CO. DESIGN SYSTEM TOKENS
+   Based on Stitch Project: "Artisanal Precision"
+   Dark Mode Luxury + Glassmorphism
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ── Surface Colors (Tiered Dark System) ── */
+  /* ── Surface Colors (Light Theme) ── */
+  --surface: #fff8f5;
+  --surface-dim: #ead6cb;
+  --surface-bright: #ffffff;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #fff1e9;
+  --surface-container: #feeade;
+  --surface-container-high: #f8e4d9;
+  --surface-container-highest: #f2dfd3;
+
+  /* ── On-Surface ── */
+  --on-surface: #261C15;
+  --on-surface-variant: #4A3428;
+
+  /* ── Inverse ── */
+  --inverse-surface: #392e26;
+  --inverse-on-surface: #ffede3;
+  --inverse-primary: #c9c6c0;
+
+  /* ── Outline ── */
+  --outline: #79776f;
+  --outline-variant: #e6e2db;
+
+  /* ── Primary (Caramel/Brown) ── */
+  --primary: #4A3428;
+  --on-primary: #ffffff;
+  --primary-container: #f5f1ea;
+  --on-primary-container: #6f6d68;
+  --primary-fixed: #e6e2db;
+  --primary-fixed-dim: #c9c6c0;
+
+  /* ── Secondary ── */
+  --secondary: #73594b;
+  --on-secondary: #ffffff;
+  --secondary-container: #ffdbca;
+  --on-secondary-container: #795f51;
+
+  /* ── Tertiary ── */
+  --tertiary: #885202;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #ffefe2;
+
+  /* ── Error ── */
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+
+  /* ── Mapped Brand Colors for Quick Theme Swap ── */
+  --espresso-black: #fff8f5; /* Background */
+  --charcoal-haze: #ffffff;  /* Card Background */
+  --liquid-gold: #C8873A;    /* Caramel Accents */
+  --froth-cream: #261C15;    /* Headings */
+  --steam-gray: #795F51;     /* Muted Text */
+
+  /* ── Surface Tint ── */
+  --surface-tint: #605e59;
+
+  /* ── Typography Scale ── */
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'Sora', sans-serif;
+  --font-mono: 'Sora', sans-serif;
+
+  /* Display Large */
+  --display-lg-size: 48px;
+  --display-lg-weight: 700;
+  --display-lg-line: 56px;
+  --display-lg-spacing: -0.02em;
+
+  /* Headline Large */
+  --headline-lg-size: 32px;
+  --headline-lg-weight: 600;
+  --headline-lg-line: 40px;
+  --headline-lg-spacing: -0.01em;
+
+  /* Headline Large Mobile */
+  --headline-lg-mobile-size: 28px;
+  --headline-lg-mobile-weight: 600;
+  --headline-lg-mobile-line: 36px;
+
+  /* Body Large */
+  --body-lg-size: 18px;
+  --body-lg-weight: 400;
+  --body-lg-line: 28px;
+
+  /* Body Medium */
+  --body-md-size: 16px;
+  --body-md-weight: 400;
+  --body-md-line: 24px;
+
+  /* Label Caps */
+  --label-caps-size: 12px;
+  --label-caps-weight: 500;
+  --label-caps-line: 16px;
+  --label-caps-spacing: 0.1em;
+
+  /* Label Small */
+  --label-sm-size: 12px;
+  --label-sm-weight: 600;
+  --label-sm-line: 16px;
+
+  /* ── Border Radius ── */
+  --rounded-sm: 0.25rem;
+  --rounded: 0.5rem;
+  --rounded-md: 0.75rem;
+  --rounded-lg: 1rem;
+  --rounded-xl: 1.5rem;
+  --rounded-full: 9999px;
+
+  /* ── Spacing ── */
+  --container-margin: 20px;
+  --gutter: 16px;
+  --unit-xs: 4px;
+  --unit-sm: 8px;
+  --unit-md: 16px;
+  --unit-lg: 24px;
+  --unit-xl: 48px;
+  --safe-area-bottom: 34px;
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-liquid: 600ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ── Minimalist Containers (Replaces Glass) ── */
+  --glass-bg: #ffffff;
+  --glass-blur: 0px;
+  --glass-border: var(--outline-variant);
+
+  /* ── Glow / Shadow ── */
+  --gold-glow: 0 4px 20px rgba(74, 52, 40, 0.08);
+  --gold-glow-active: 0 8px 30px rgba(74, 52, 40, 0.12);
+
+  /* ── Gradient Border ── */
+  --gold-border-gradient: var(--outline-variant);
+}

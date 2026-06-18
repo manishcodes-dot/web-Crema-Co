@@ -1,0 +1,16 @@
+.tonal-layer {
+  box-shadow: 0 4px 20px rgba(74, 52, 40, 0.05);
+}
+.steamer-progress {
+  background: linear-gradient(to right, transparent, #885202, transparent);
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: steamer-flow 3s infinite linear;
+}
+@keyframes steamer-flow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

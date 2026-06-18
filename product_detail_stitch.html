@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Signature Gold Latte | Crema &amp; Co</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#f2dfd3",
+                    "inverse-primary": "#c9c6c0",
+                    "inverse-surface": "#392e26",
+                    "inverse-on-surface": "#ffede3",
+                    "primary": "#605e59",
+                    "outline": "#79776f",
+                    "primary-fixed-dim": "#c9c6c0",
+                    "tertiary-container": "#ffefe2",
+                    "on-surface-variant": "#484740",
+                    "on-surface": "#231a13",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdcbc",
+                    "primary-container": "#f5f1ea",
+                    "surface-container-low": "#fff1e9",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#683d00",
+                    "secondary": "#73594b",
+                    "surface-container": "#feeade",
+                    "on-secondary-container": "#795f51",
+                    "on-background": "#231a13",
+                    "outline-variant": "#cac6bd",
+                    "secondary-fixed": "#ffdbca",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#6f6d68",
+                    "on-tertiary-container": "#9a6115",
+                    "on-tertiary-fixed": "#2c1700",
+                    "surface-dim": "#ead6cb",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#f2dfd3",
+                    "surface": "#fff8f5",
+                    "tertiary": "#885202",
+                    "on-secondary-fixed": "#29170d",
+                    "secondary-container": "#ffdbca",
+                    "on-primary-fixed": "#1c1c18",
+                    "surface-bright": "#fff8f5",
+                    "on-primary-fixed-variant": "#484742",
+                    "surface-tint": "#605e59",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#f8e4d9",
+                    "primary-fixed": "#e6e2db",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#fff8f5",
+                    "secondary-fixed-dim": "#e1c0af",
+                    "on-secondary-fixed-variant": "#594235",
+                    "tertiary-fixed-dim": "#ffb86a",
+                    "on-error-container": "#93000a",
+                    "caramel": "#C8873A"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "container-max": "1280px",
+                    "stack-sm": "8px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "stack-md": "16px",
+                    "stack-lg": "32px",
+                    "section-gap": "80px"
+            },
+            "fontFamily": {
+                    "caption": ["Sora"],
+                    "headline-lg": ["Sora"],
+                    "display-lg": ["Sora"],
+                    "label-md": ["Sora"],
+                    "body-md": ["Sora"],
+                    "display-lg-mobile": ["Sora"],
+                    "body-lg": ["Sora"],
+                    "headline-md": ["Sora"]
+            },
+            "fontSize": {
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fff8f5;
+            color: #231a13;
+            -webkit-font-smoothing: antialiased;
+        }
+        .custom-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #C8873A;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        .custom-range::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #C8873A;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        .steamer-progress {
+            background: linear-gradient(to bottom, #C8873A, transparent);
+            transition: height 0.3s ease;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-caramel/20">
+<!-- TopNavBar -->
+<header class="fixed w-full top-0 left-0 bg-surface-bright dark:bg-surface-container border-b border-outline-variant/30 z-50">
+<nav class="flex justify-between items-center px-margin-desktop py-unit max-w-container-max mx-auto h-20">
+<div class="text-headline-md font-headline-md font-bold text-secondary tracking-tight">Crema &amp; Co</div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="font-label-md text-label-md text-secondary border-b-2 border-secondary cursor-pointer transition-all duration-200" href="#">Menu</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors duration-300 cursor-pointer" href="#">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors duration-300 cursor-pointer" href="#">Locations</a>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="p-2 cursor-pointer transition-all duration-200 hover:text-tertiary">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-20 min-h-screen">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row min-h-[calc(100vh-80px)]">
+<!-- Left: Hero Image Section -->
+<section class="w-full md:w-1/2 relative bg-surface-container-low flex items-center justify-center p-stack-lg">
+<div class="w-full h-full rounded-xl overflow-hidden shadow-sm border border-outline-variant/10 group">
+<img class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" data-alt="A premium high-fidelity close-up shot of a Signature Gold Latte in a designer ceramic cup. The latte features intricate golden-brown latte art with a sprinkle of real edible gold flakes on top. The lighting is warm and cinematic, highlighting the creamy texture of the foam. The background is a soft-focus artisanal cafe setting with warm wood and cream tones, emphasizing a luxury coffee experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvXjtdslRdMjfzgZKw7PCGxE_T64atnqDG4vOLwvYbVTO_4qG9EjE7S3JeAfmjCuk3jmx54m6xVrCELP4mst4UB9heLt37DdK25mH1ChPQUDWnJ5I-OietFvxHPDTNXnpAMrNG8AQph5l3tVFllV5iNynrvCRlHqBa1a_H1Od9MOTaKBzwrrlKPjxpOQlA_ZRWXKYbL_30eq1eMsspcDragTwb-h3ZZtpf4Pe_zh-NNV-4zWtL4nozs9eK_Z3n8HjKEIJxBXf925JU"/>
+</div>
+<!-- Decorative Steamer element for brand flair -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-32 bg-caramel/10 rounded-full overflow-hidden hidden lg:block">
+<div class="steamer-progress w-full h-1/2"></div>
+</div>
+</section>
+<!-- Right: Product Detail Section -->
+<section class="w-full md:w-1/2 px-margin-desktop py-section-gap flex flex-col justify-center">
+<nav class="flex gap-2 mb-stack-md text-on-surface-variant/60">
+<span class="text-caption font-caption uppercase tracking-widest">Menu</span>
+<span class="text-caption font-caption">/</span>
+<span class="text-caption font-caption uppercase tracking-widest">Signature Series</span>
+</nav>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-stack-sm leading-tight">Signature Gold Latte</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-md">
+                    Our house-specialty double espresso infused with honey, Madagascar vanilla, and topped with a delicate shimmer of edible 24k gold.
+                </p>
+<div class="space-y-stack-lg">
+<!-- Milk Selection -->
+<div>
+<label class="font-label-md text-label-md text-on-surface block mb-stack-sm">MILK CHOICE</label>
+<div class="flex flex-wrap gap-stack-sm">
+<button class="px-stack-md py-stack-sm border border-caramel bg-caramel text-white rounded-lg font-label-md text-label-md transition-all" onclick="selectMilk(this)">Whole</button>
+<button class="px-stack-md py-stack-sm border border-outline-variant hover:border-caramel text-on-surface-variant rounded-lg font-label-md text-label-md transition-all" onclick="selectMilk(this)">Oat</button>
+<button class="px-stack-md py-stack-sm border border-outline-variant hover:border-caramel text-on-surface-variant rounded-lg font-label-md text-label-md transition-all" onclick="selectMilk(this)">Almond</button>
+</div>
+</div>
+<!-- Sweetness Slider -->
+<div>
+<div class="flex justify-between items-center mb-stack-sm">
+<label class="font-label-md text-label-md text-on-surface">SWEETNESS LEVEL</label>
+<span class="text-caption font-caption text-caramel font-bold" id="sweetness-val">Standard (50%)</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-full appearance-none cursor-pointer custom-range" max="100" min="0" oninput="updateSweetness(this.value)" step="25" type="range" value="50"/>
+<div class="flex justify-between mt-2 text-[10px] uppercase tracking-tighter text-on-surface-variant/40 font-bold">
+<span>None</span>
+<span>Standard</span>
+<span>Extra</span>
+</div>
+</div>
+<!-- Add-ons -->
+<div class="bg-surface-container-low p-stack-md rounded-xl border border-outline-variant/20">
+<label class="flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-stack-md">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-caramel shadow-sm">
+<span class="material-symbols-outlined" data-icon="coffee">coffee</span>
+</div>
+<div>
+<span class="font-label-md text-label-md block text-on-surface">Extra Espresso Shot</span>
+<span class="text-caption font-caption text-on-surface-variant">+ $1.50</span>
+</div>
+</div>
+<input class="w-5 h-5 rounded border-outline-variant text-caramel focus:ring-caramel/20" type="checkbox"/>
+</label>
+</div>
+<!-- Order Action -->
+<div class="pt-stack-lg border-t border-outline-variant/30 mt-stack-lg flex items-center justify-between">
+<div>
+<span class="text-caption font-caption text-on-surface-variant block">Price</span>
+<span class="font-display-lg text-headline-lg text-secondary">$6.75</span>
+</div>
+<button class="bg-caramel hover:brightness-110 active:scale-95 text-white px-12 py-4 rounded-full font-label-md text-label-md transition-all shadow-md flex items-center gap-2 group">
+                            Add to Order
+                            <span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-stack-lg gap-gutter max-w-container-max mx-auto">
+<div class="text-headline-sm font-headline-md text-secondary">Crema &amp; Co</div>
+<div class="flex gap-stack-lg text-on-surface-variant/80 font-body-md text-body-md">
+<a class="hover:text-tertiary underline transition-all" href="#">Instagram</a>
+<a class="hover:text-tertiary underline transition-all" href="#">Facebook</a>
+<a class="hover:text-tertiary underline transition-all" href="#">Contact Us</a>
+<a class="hover:text-tertiary underline transition-all" href="#">Privacy Policy</a>
+</div>
+<div class="text-caption font-caption text-on-surface-variant">© 2024 Crema &amp; Co. Artisanal Coffee Roasters.</div>
+</div>
+</footer>
+<script>
+        function selectMilk(btn) {
+            // Reset all milk buttons
+            const btns = btn.parentElement.querySelectorAll('button');
+            btns.forEach(b => {
+                b.classList.remove('bg-caramel', 'text-white', 'border-caramel');
+                b.classList.add('border-outline-variant', 'text-on-surface-variant');
+            });
+            // Highlight selected
+            btn.classList.add('bg-caramel', 'text-white', 'border-caramel');
+            btn.classList.remove('border-outline-variant', 'text-on-surface-variant');
+        }
+
+        function updateSweetness(val) {
+            const label = document.getElementById('sweetness-val');
+            let text = "";
+            if (val == 0) text = "Unsweetened (0%)";
+            else if (val == 25) text = "Light (25%)";
+            else if (val == 50) text = "Standard (50%)";
+            else if (val == 75) text = "Sweet (75%)";
+            else text = "Extra Sweet (100%)";
+            label.innerText = text;
+        }
+
+        // Micro-interaction for the Steamer effect
+        window.addEventListener('scroll', () => {
+            const steamer = document.querySelector('.steamer-progress');
+            if(steamer) {
+                const scrolled = window.scrollY;
+                const height = Math.min(100, 20 + (scrolled / 5)) + "%";
+                steamer.style.height = height;
+            }
+        });
+    </script>
+</body></html>
