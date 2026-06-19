@@ -178,7 +178,7 @@ export default function ProductDetail() {
                     <button
                       key={option}
                       onClick={() => setMilk(option)}
-                      className={`px-stack-md py-stack-sm border rounded-lg font-label-md text-label-md transition-all cursor-pointer ${
+                      className={`px-stack-md py-stack-sm border rounded-full font-label-md text-label-md transition-all cursor-pointer ${
                         isSelected 
                           ? 'border-primary bg-primary text-white' 
                           : 'border-outline-variant hover:border-primary text-on-surface-variant'

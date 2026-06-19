@@ -190,13 +190,13 @@ export default function About() {
           <div className="flex flex-col sm:flex-row justify-center gap-md">
             <Link 
               to="/menu"
-              className="bg-white text-primary px-xl py-md font-label-md hover:bg-opacity-95 transition-all text-center rounded-sm"
+              className="bg-white text-primary px-xl py-md font-label-md hover:bg-opacity-95 transition-all text-center rounded-full"
             >
               Start Subscription
             </Link>
             <Link 
               to="/locations"
-              className="border border-white text-white px-xl py-md font-label-md hover:bg-white hover:text-primary transition-all text-center rounded-sm"
+              className="border border-white text-white px-xl py-md font-label-md hover:bg-white hover:text-primary transition-all text-center rounded-full"
             >
               Visit The Roastery
             </Link>

@@ -54,7 +54,7 @@ export default function Home() {
   return (
     <div className="w-full bg-background text-on-surface select-none">
       {/* Full-Width Cinematic Hero */}
-      <header className="relative w-full h-[921px] overflow-hidden">
+      <header className="relative w-full h-[calc(100vh-80px)] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             className="w-full h-full object-cover grayscale-[20%] brightness-75" 
@@ -67,13 +67,13 @@ export default function Home() {
             <p className="font-label-md text-label-md text-primary-fixed uppercase tracking-[0.2em] reveal-text">
               <span>Authentic Origins &amp; Artisanal Craft</span>
             </p>
-            <h1 className="font-display-lg text-display-lg text-white max-w-3xl reveal-text">
+            <h1 className="font-display-lg text-4xl sm:text-5xl md:text-display-lg text-white max-w-3xl reveal-text">
               <span>Crafted Coffee, <br/>Served With Passion</span>
             </h1>
             <div className="pt-md reveal-text">
               <Link 
                 to="/menu"
-                className="bg-primary text-on-primary px-lg py-md font-label-md text-label-md transition-all hover:scale-105 inline-block"
+                className="bg-primary text-on-primary px-lg py-md font-label-md text-label-md transition-all hover:scale-105 inline-block rounded-full"
               >
                 EXPLORE THE COLLECTION
               </Link>
@@ -165,7 +165,7 @@ export default function Home() {
             </div>
             <Link 
               to="/about"
-              className="mt-xl border border-primary text-primary px-lg py-md font-label-md text-label-md hover:bg-primary hover:text-white transition-all inline-block"
+              className="mt-xl border border-primary text-primary px-lg py-md font-label-md text-label-md hover:bg-primary hover:text-white transition-all inline-block rounded-full"
             >
               READ OUR STORY
             </Link>

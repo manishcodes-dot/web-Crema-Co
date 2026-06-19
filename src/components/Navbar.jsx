@@ -12,68 +12,109 @@ export default function Navbar() {
   }, [location]);
 
   return (
-    <nav className="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant/30 duration-300 ease-in-out">
+    <nav className="w-full top-0 sticky z-50 bg-surface/85 backdrop-blur-md border-b border-outline-variant/30 duration-300 ease-in-out">
       <div className="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
         {/* Brand Identity */}
-        <Link 
-          to="/" 
-          className="font-display-lg text-headline-md text-primary tracking-tight cursor-pointer"
-          id="nav-logo"
-        >
-          Crema &amp; Co.
-        </Link>
+        <div className="flex-1 flex justify-start">
+          <Link 
+            to="/" 
+            className="font-display-lg text-headline-md text-primary tracking-tight cursor-pointer"
+            id="nav-logo"
+          >
+            Crema &amp; Co.
+          </Link>
+        </div>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex items-center gap-lg">
+        <div className="hidden md:flex justify-center items-center gap-md lg:gap-lg">
+          <Link 
+            to="/" 
+            className={`font-label-md text-label-md pb-1 cursor-pointer transition-colors relative group ${
+              location.pathname === '/'
+                ? 'text-primary font-bold'
+                : 'text-on-surface-variant hover:text-primary'
+            }`}
+            id="nav-home"
+          >
+            Home
+            <span className={`absolute bottom-0 left-0 h-[2px] bg-primary transition-all duration-300 ${
+              location.pathname === '/' ? 'w-full' : 'w-0 group-hover:w-full'
+            }`} />
+          </Link>
           <Link 
             to="/about" 
-            className={`font-label-md text-label-md pb-1 cursor-pointer transition-colors ${
+            className={`font-label-md text-label-md pb-1 cursor-pointer transition-colors relative group ${
               location.pathname === '/about'
-                ? 'text-primary font-bold border-b-2 border-primary'
+                ? 'text-primary font-bold'
                 : 'text-on-surface-variant hover:text-primary'
             }`}
             id="nav-about"
           >
             Our Story
+            <span className={`absolute bottom-0 left-0 h-[2px] bg-primary transition-all duration-300 ${
+              location.pathname === '/about' ? 'w-full' : 'w-0 group-hover:w-full'
+            }`} />
           </Link>
           <Link 
             to="/locations" 
-            className={`font-label-md text-label-md pb-1 cursor-pointer transition-colors ${
+            className={`font-label-md text-label-md pb-1 cursor-pointer transition-colors relative group ${
               location.pathname === '/locations'
-                ? 'text-primary font-bold border-b-2 border-primary'
+                ? 'text-primary font-bold'
                 : 'text-on-surface-variant hover:text-primary'
             }`}
             id="nav-locations"
           >
             The Roastery
+            <span className={`absolute bottom-0 left-0 h-[2px] bg-primary transition-all duration-300 ${
+              location.pathname === '/locations' ? 'w-full' : 'w-0 group-hover:w-full'
+            }`} />
           </Link>
           <Link 
             to="/menu" 
-            className={`font-label-md text-label-md pb-1 cursor-pointer transition-colors ${
+            className={`font-label-md text-label-md pb-1 cursor-pointer transition-colors relative group ${
               location.pathname === '/menu'
-                ? 'text-primary font-bold border-b-2 border-primary'
+                ? 'text-primary font-bold'
                 : 'text-on-surface-variant hover:text-primary'
             }`}
             id="nav-menu"
           >
             Menu
+            <span className={`absolute bottom-0 left-0 h-[2px] bg-primary transition-all duration-300 ${
+              location.pathname === '/menu' ? 'w-full' : 'w-0 group-hover:w-full'
+            }`} />
           </Link>
-          <a 
-            href="#" 
-            className="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md cursor-pointer"
+          <Link 
+            to="/brew-guides" 
+            className={`font-label-md text-label-md pb-1 cursor-pointer transition-colors relative group ${
+              location.pathname === '/brew-guides'
+                ? 'text-primary font-bold'
+                : 'text-on-surface-variant hover:text-primary'
+            }`}
+            id="nav-brew-guides"
           >
             Brew Guides
-          </a>
-          <a 
-            href="#" 
-            className="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md cursor-pointer"
+            <span className={`absolute bottom-0 left-0 h-[2px] bg-primary transition-all duration-300 ${
+              location.pathname === '/brew-guides' ? 'w-full' : 'w-0 group-hover:w-full'
+            }`} />
+          </Link>
+          <Link 
+            to="/subscription" 
+            className={`font-label-md text-label-md pb-1 cursor-pointer transition-colors relative group ${
+              location.pathname === '/subscription'
+                ? 'text-primary font-bold'
+                : 'text-on-surface-variant hover:text-primary'
+            }`}
+            id="nav-subscription"
           >
             Subscription
-          </a>
+            <span className={`absolute bottom-0 left-0 h-[2px] bg-primary transition-all duration-300 ${
+              location.pathname === '/subscription' ? 'w-full' : 'w-0 group-hover:w-full'
+            }`} />
+          </Link>
         </div>
 
         {/* Action */}
-        <div className="flex items-center gap-sm">
+        <div className="flex-1 flex justify-end items-center gap-sm">
           <Link 
             to="/checkout" 
             className="relative p-2 cursor-pointer transition-all duration-200 text-primary hover:opacity-85 flex items-center justify-center" 
@@ -89,7 +130,7 @@ export default function Navbar() {
           
           <Link 
             to="/menu"
-            className="bg-primary text-on-primary px-md py-sm font-label-md text-label-md hover:opacity-80 transition-all uppercase tracking-widest hidden sm:inline-block"
+            className="bg-primary text-on-primary px-md py-sm font-label-md text-label-md hover:opacity-80 transition-all uppercase tracking-widest hidden sm:inline-block rounded-full"
           >
             Order Now
           </Link>
@@ -108,38 +149,68 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-surface border-b border-outline-variant/30 py-4 px-margin-mobile flex flex-col gap-4">
           <Link 
+            to="/" 
+            className={`font-label-md text-label-md py-1 transition-colors ${
+              location.pathname === '/'
+                ? 'text-primary font-bold'
+                : 'text-on-surface-variant hover:text-primary'
+            }`}
+          >
+            Home
+          </Link>
+          <Link 
             to="/about" 
-            className="font-label-md text-label-md text-on-surface-variant hover:text-primary py-1"
+            className={`font-label-md text-label-md py-1 transition-colors ${
+              location.pathname === '/about'
+                ? 'text-primary font-bold'
+                : 'text-on-surface-variant hover:text-primary'
+            }`}
           >
             Our Story
           </Link>
           <Link 
             to="/locations" 
-            className="font-label-md text-label-md text-on-surface-variant hover:text-primary py-1"
+            className={`font-label-md text-label-md py-1 transition-colors ${
+              location.pathname === '/locations'
+                ? 'text-primary font-bold'
+                : 'text-on-surface-variant hover:text-primary'
+            }`}
           >
             The Roastery
           </Link>
           <Link 
             to="/menu" 
-            className="font-label-md text-label-md text-on-surface-variant hover:text-primary py-1"
+            className={`font-label-md text-label-md py-1 transition-colors ${
+              location.pathname === '/menu'
+                ? 'text-primary font-bold'
+                : 'text-on-surface-variant hover:text-primary'
+            }`}
           >
             Menu
           </Link>
-          <a 
-            href="#" 
-            className="font-label-md text-label-md text-on-surface-variant hover:text-primary py-1"
+          <Link 
+            to="/brew-guides" 
+            className={`font-label-md text-label-md py-1 transition-colors ${
+              location.pathname === '/brew-guides'
+                ? 'text-primary font-bold'
+                : 'text-on-surface-variant hover:text-primary'
+            }`}
           >
             Brew Guides
-          </a>
-          <a 
-            href="#" 
-            className="font-label-md text-label-md text-on-surface-variant hover:text-primary py-1"
+          </Link>
+          <Link 
+            to="/subscription" 
+            className={`font-label-md text-label-md py-1 transition-colors ${
+              location.pathname === '/subscription'
+                ? 'text-primary font-bold'
+                : 'text-on-surface-variant hover:text-primary'
+            }`}
           >
             Subscription
-          </a>
+          </Link>
           <Link 
             to="/menu"
-            className="bg-primary text-on-primary px-md py-sm font-label-md text-label-md hover:opacity-80 transition-all uppercase tracking-widest text-center mt-2"
+            className="bg-primary text-on-primary px-md py-sm font-label-md text-label-md hover:opacity-80 transition-all uppercase tracking-widest text-center mt-2 rounded-full"
           >
             Order Now
           </Link>

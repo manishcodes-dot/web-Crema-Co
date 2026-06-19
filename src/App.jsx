@@ -9,6 +9,8 @@ import ProductDetail from './pages/ProductDetail';
 import Checkout from './pages/Checkout';
 import About from './pages/About';
 import Locations from './pages/Locations';
+import BrewGuides from './pages/BrewGuides';
+import Subscription from './pages/Subscription';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -32,6 +34,8 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/about" element={<About />} />
             <Route path="/locations" element={<Locations />} />
+            <Route path="/brew-guides" element={<BrewGuides />} />
+            <Route path="/subscription" element={<Subscription />} />
           </Routes>
         </main>
         <Footer />

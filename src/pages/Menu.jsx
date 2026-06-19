@@ -162,7 +162,7 @@ export default function Menu() {
           <Link 
             to={`/product/${product.slug}`}
             key={product._id} 
-            className="bg-surface-container-lowest border border-outline-variant/10 group cursor-pointer block transition-all hover:-translate-y-1 duration-300"
+            className="bg-surface-container-lowest border border-outline-variant/10 group cursor-pointer block transition-all hover:-translate-y-1 hover:shadow-lg duration-300 rounded-3xl overflow-hidden"
           >
             <div className="aspect-[4/5] overflow-hidden relative">
               <img 
@@ -188,7 +188,7 @@ export default function Menu() {
               </p>
               <button 
                 onClick={(e) => handleAddToBag(e, product)}
-                className="w-full flex items-center justify-center gap-2 border border-primary text-primary py-3 font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all cursor-pointer"
+                className="w-full flex items-center justify-center gap-2 border border-primary text-primary py-3 font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all cursor-pointer rounded-full"
                 id={`menu-add-${product.slug}`}
               >
                 <span className="material-symbols-outlined text-[20px]">add</span> Add to Cart

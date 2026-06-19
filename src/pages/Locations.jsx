@@ -150,13 +150,13 @@ export default function Locations() {
                       href={`https://maps.google.com/?q=${encodeURIComponent(loc.address)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 border border-primary text-primary py-2 rounded-sm font-label-md text-label-md hover:bg-primary hover:text-white transition-all text-center cursor-pointer block uppercase tracking-wider"
+                      className="flex-1 border border-primary text-primary py-2 rounded-full font-label-md text-label-md hover:bg-primary hover:text-white transition-all text-center cursor-pointer block uppercase tracking-wider"
                       onClick={(e) => e.stopPropagation()}
                     >
                       GET DIRECTIONS
                     </a>
                     <button 
-                      className="px-md border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-all rounded-sm cursor-pointer"
+                      className="px-md border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-all rounded-full cursor-pointer"
                       onClick={(e) => {
                         e.stopPropagation();
                         navigator.clipboard.writeText(loc.address);
@@ -210,9 +210,9 @@ export default function Locations() {
 
           {/* Overlay Zoom Controls */}
           <div className="absolute top-md right-md flex flex-col gap-xs z-20">
-            <button className="w-10 h-10 bg-surface border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container transition-colors shadow-sm cursor-pointer rounded-sm"><span class="material-symbols-outlined">add</span></button>
-            <button className="w-10 h-10 bg-surface border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container transition-colors shadow-sm cursor-pointer rounded-sm"><span class="material-symbols-outlined">remove</span></button>
-            <button className="w-10 h-10 bg-surface border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container transition-colors shadow-sm mt-sm cursor-pointer rounded-sm"><span class="material-symbols-outlined">my_location</span></button>
+            <button className="w-10 h-10 bg-surface border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container transition-colors shadow-sm cursor-pointer rounded-full"><span class="material-symbols-outlined">add</span></button>
+            <button className="w-10 h-10 bg-surface border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container transition-colors shadow-sm cursor-pointer rounded-full"><span class="material-symbols-outlined">remove</span></button>
+            <button className="w-10 h-10 bg-surface border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container transition-colors shadow-sm mt-sm cursor-pointer rounded-full"><span class="material-symbols-outlined">my_location</span></button>
           </div>
 
           {/* Contextual Detail Panel */}

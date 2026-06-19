@@ -65,7 +65,7 @@ export default function Checkout() {
           <div className="inline-flex items-center gap-2 bg-primary-container text-on-primary-container rounded-full px-4 py-1.5">
             <span className="text-xs font-semibold">Freshly roasted</span>
           </div>
-          <Link to="/menu" className="mt-4 w-full bg-primary hover:opacity-90 text-white font-semibold py-3 rounded-sm transition-all text-center" id="success-continue">
+          <Link to="/menu" className="mt-4 w-full bg-primary hover:opacity-90 text-white font-semibold py-3 rounded-full transition-all text-center" id="success-continue">
             Continue Browsing
           </Link>
         </div>
@@ -84,7 +84,7 @@ export default function Checkout() {
           {items.length === 0 ? (
             <div className="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/30 text-center animate-fade-in" id="checkout-empty">
               <p className="text-body-lg text-on-surface-variant mb-6">Your cart is empty</p>
-              <Link to="/menu" className="inline-block bg-primary hover:opacity-90 text-white font-semibold px-6 py-3 rounded-sm transition-all">
+              <Link to="/menu" className="inline-block bg-primary hover:opacity-90 text-white font-semibold px-6 py-3 rounded-full transition-all">
                 Explore Our Menu
               </Link>
             </div>
@@ -95,10 +95,10 @@ export default function Checkout() {
                 <h2 className="text-xl font-headline-md text-primary mb-4">Order Method</h2>
                 
                 {/* Toggle tab */}
-                <div className="flex p-1 bg-surface-container rounded-sm max-w-md mb-4">
+                <div className="flex p-1 bg-surface-container rounded-full max-w-md mb-4">
                   <button 
                     type="button"
-                    className={`flex-1 py-2 rounded-sm text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                    className={`flex-1 py-2 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
                       orderMethod === 'delivery' 
                         ? 'bg-surface-container-lowest text-primary shadow-sm' 
                         : 'text-on-surface-variant hover:text-primary'
@@ -110,7 +110,7 @@ export default function Checkout() {
                   </button>
                   <button 
                     type="button"
-                    className={`flex-1 py-2 rounded-sm text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                    className={`flex-1 py-2 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
                       orderMethod === 'pickup' 
                         ? 'bg-surface-container-lowest text-primary shadow-sm' 
                         : 'text-on-surface-variant hover:text-primary'
@@ -125,15 +125,21 @@ export default function Checkout() {
                 <div className="mt-4">
                   {orderMethod === 'delivery' ? (
                     <div className="space-y-4">
-                      <div className="group">
-                        <label className="block text-sm font-semibold text-on-surface-variant mb-1">Delivery Address</label>
+                      <div className="relative group">
                         <input 
-                          className="w-full bg-white border border-outline-variant/30 rounded-sm px-4 py-3 focus:border-primary transition-colors outline-none text-sm text-on-surface" 
-                          placeholder="123 Artisanal Street, Roastery District" 
+                          id="address-input"
+                          className="peer w-full bg-white border border-outline-variant/30 rounded-full px-5 pt-5 pb-2.5 focus:border-primary transition-all outline-none text-sm text-on-surface placeholder-transparent" 
+                          placeholder="Delivery Address" 
                           type="text"
                           value={address}
                           onChange={(e) => setAddress(e.target.value)}
                         />
+                        <label 
+                          htmlFor="address-input"
+                          className="absolute left-5 top-3.5 text-sm text-on-surface-variant/70 transition-all duration-200 pointer-events-none origin-[0] peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        >
+                          Delivery Address
+                        </label>
                       </div>
                     </div>
                   ) : (
@@ -193,32 +199,53 @@ export default function Checkout() {
 
                   {paymentMethod === 'card' && (
                     <div className="grid grid-cols-2 gap-4 pt-2">
-                      <div className="col-span-2">
+                      <div className="col-span-2 relative">
                         <input 
-                          className="w-full bg-white border border-outline-variant/30 rounded-sm px-4 py-3 focus:border-primary outline-none text-sm text-on-surface" 
+                          id="card-number-input"
+                          className="peer w-full bg-white border border-outline-variant/30 rounded-xl px-4 pt-5 pb-2.5 focus:border-primary outline-none text-sm text-on-surface placeholder-transparent transition-all" 
                           placeholder="Card number" 
                           type="text"
                           value={cardNumber}
                           onChange={(e) => setCardNumber(e.target.value)}
                         />
+                        <label 
+                          htmlFor="card-number-input"
+                          className="absolute left-4 top-3.5 text-sm text-on-surface-variant/70 transition-all duration-200 pointer-events-none origin-[0] peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        >
+                          Card number
+                        </label>
                       </div>
-                      <div>
+                      <div className="relative">
                         <input 
-                          className="w-full bg-white border border-outline-variant/30 rounded-sm px-4 py-3 focus:border-primary outline-none text-sm text-on-surface" 
+                          id="card-expiry-input"
+                          className="peer w-full bg-white border border-outline-variant/30 rounded-xl px-4 pt-5 pb-2.5 focus:border-primary outline-none text-sm text-on-surface placeholder-transparent transition-all" 
                           placeholder="MM / YY" 
                           type="text"
                           value={cardExpiry}
                           onChange={(e) => setCardExpiry(e.target.value)}
                         />
+                        <label 
+                          htmlFor="card-expiry-input"
+                          className="absolute left-4 top-3.5 text-sm text-on-surface-variant/70 transition-all duration-200 pointer-events-none origin-[0] peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        >
+                          MM / YY
+                        </label>
                       </div>
-                      <div>
+                      <div className="relative">
                         <input 
-                          className="w-full bg-white border border-outline-variant/30 rounded-sm px-4 py-3 focus:border-primary outline-none text-sm text-on-surface" 
+                          id="card-cvc-input"
+                          className="peer w-full bg-white border border-outline-variant/30 rounded-xl px-4 pt-5 pb-2.5 focus:border-primary outline-none text-sm text-on-surface placeholder-transparent transition-all" 
                           placeholder="CVC" 
                           type="text"
                           value={cardCvc}
                           onChange={(e) => setCardCvc(e.target.value)}
                         />
+                        <label 
+                          htmlFor="card-cvc-input"
+                          className="absolute left-4 top-3.5 text-sm text-on-surface-variant/70 transition-all duration-200 pointer-events-none origin-[0] peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        >
+                          CVC
+                        </label>
                       </div>
                     </div>
                   )}
@@ -283,7 +310,7 @@ export default function Checkout() {
                 <button 
                   onClick={handlePlaceOrder}
                   disabled={isSubmitting}
-                  className="w-full mt-6 bg-primary hover:opacity-90 text-white font-semibold py-4 rounded-sm transition-all transform active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full mt-6 bg-primary hover:opacity-90 text-white font-semibold py-4 rounded-full transition-all transform active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>{isSubmitting ? 'Placing Order...' : 'Place Order'}</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>

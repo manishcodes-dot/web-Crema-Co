@@ -16,24 +16,24 @@ export default function Footer() {
         {/* Links Column 1 */}
         <div className="flex flex-col gap-sm">
           <h4 className="font-label-md text-label-md text-primary uppercase tracking-wider mb-xs">Explore</h4>
-          <a className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Journal</a>
-          <a className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Wholesale</a>
-          <a className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Sustainability</a>
+          <a className="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors font-body-md text-body-md" href="#">Journal</a>
+          <a className="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors font-body-md text-body-md" href="#">Wholesale</a>
+          <a className="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors font-body-md text-body-md" href="#">Sustainability</a>
         </div>
         {/* Links Column 2 */}
         <div className="flex flex-col gap-sm">
           <h4 className="font-label-md text-label-md text-primary uppercase tracking-wider mb-xs">Support</h4>
-          <a className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
-          <a className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Shipping &amp; Returns</a>
-          <a className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact Us</a>
+          <a className="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+          <a className="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors font-body-md text-body-md" href="#">Shipping &amp; Returns</a>
+          <a className="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors font-body-md text-body-md" href="#">Contact Us</a>
         </div>
         {/* Social/Loc Column */}
         <div className="space-y-md">
           <h4 class="font-label-md text-label-md text-primary uppercase tracking-wider mb-xs">Connect</h4>
           <div className="flex gap-md">
-            <a className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>
-            <a className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="https://vimeo.com" target="_blank" rel="noopener noreferrer">Vimeo</a>
+            <a className="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors font-body-md text-body-md" href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a className="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors font-body-md text-body-md" href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>
+            <a className="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors font-body-md text-body-md" href="https://vimeo.com" target="_blank" rel="noopener noreferrer">Vimeo</a>
           </div>
           <div className="pt-sm">
             <p className="font-caption text-caption text-on-surface-variant">Flagship Roastery:</p>

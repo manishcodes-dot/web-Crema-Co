@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brew Guides | Crema &amp; Co.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#e6bead",
+                    "secondary-container": "#f9dcd3",
+                    "outline-variant": "#d4c3bd",
+                    "surface-container-highest": "#e9e1de",
+                    "error": "#ba1a1a",
+                    "background": "#fff8f6",
+                    "surface-variant": "#e9e1de",
+                    "on-primary-container": "#d3ac9c",
+                    "secondary-fixed": "#f9dcd3",
+                    "primary-fixed-dim": "#e6bead",
+                    "tertiary-container": "#70370e",
+                    "secondary": "#6f5a53",
+                    "on-background": "#1e1b1a",
+                    "primary": "#432a1e",
+                    "on-tertiary-container": "#f3a271",
+                    "on-surface-variant": "#504440",
+                    "on-primary-fixed-variant": "#5c4033",
+                    "surface-container": "#f4ecea",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#5c4033",
+                    "tertiary-fixed-dim": "#ffb68c",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#765749",
+                    "on-secondary-container": "#756058",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#70370e",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f7efec",
+                    "tertiary": "#522200",
+                    "secondary-fixed-dim": "#dcc1b8",
+                    "on-surface": "#1e1b1a",
+                    "on-secondary-fixed-variant": "#56423c",
+                    "on-tertiary-fixed": "#321200",
+                    "surface-container-high": "#efe6e4",
+                    "surface-container-low": "#faf2ef",
+                    "surface-bright": "#fff8f6",
+                    "surface": "#fff8f6",
+                    "on-secondary-fixed": "#271813",
+                    "surface-dim": "#e0d8d6",
+                    "on-primary-fixed": "#2c160b",
+                    "inverse-surface": "#33302e",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffdbc9",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#82746f",
+                    "primary-fixed": "#ffdbcc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "lg": "48px",
+                    "xl": "80px",
+                    "container-max": "1280px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "caption": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #F8F5F0;
+        }
+        .brew-card-hover {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .brew-card-hover:hover {
+            transform: translateY(-8px);
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky z-50 bg-surface dark:bg-on-surface border-b border-outline-variant/30 duration-300 ease-in-out">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
+<div class="font-display-lg text-headline-md text-primary dark:text-primary-fixed-dim">Crema &amp; Co.</div>
+<div class="hidden md:flex items-center gap-lg">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all" href="#">Our Story</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all" href="#">The Roastery</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all" href="#">Menu</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1 transition-all" href="#">Brew Guides</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all" href="#">Subscription</a>
+</div>
+<button class="bg-primary text-on-primary px-md py-sm font-label-md text-label-md hover:opacity-80 transition-all duration-300">
+                Order Now
+            </button>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-gutter py-xl">
+<!-- Hero Section -->
+<header class="mb-xl text-center max-w-3xl mx-auto">
+<h1 class="font-display-lg text-display-lg text-primary mb-md">Master the Craft</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic">
+                A meticulous exploration into the science and soul of brewing. Elevate your morning ritual through artisanal techniques and precision.
+            </p>
+</header>
+<!-- Category Filter -->
+<div class="flex flex-wrap justify-center gap-md mb-xl">
+<button class="font-label-md text-label-md border-b-2 border-primary text-primary px-xs pb-xs transition-colors">All Methods</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary px-xs pb-xs transition-colors">V60</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary px-xs pb-xs transition-colors">Chemex</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary px-xs pb-xs transition-colors">Aeropress</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary px-xs pb-xs transition-colors">French Press</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary px-xs pb-xs transition-colors">Cold Brew</button>
+</div>
+<!-- Featured Guide (Asymmetric / Editorial) -->
+<section class="mb-xl grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 aspect-[4/3] relative overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A cinematic, high-contrast photograph of a barista performing a slow, circular pour-over motion with a copper kettle. Steam rises gracefully from a glass Chemex carafe. The lighting is warm and directional, highlighting the rich texture of the wet coffee grounds. The setting is a minimalist, Scandinavian-inspired boutique coffee shop with clean lines and wooden surfaces." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRoyGFo5_uxIWtZZ5rZgo0wr2rGrTvw8fE3PgacoWeJV8Fc3RNSQD2tOQU5Wypk32UmIIGwzxtwdKrTjdLW6dym_xyUIJAd_c46TL0esyTwknQdWxGtow2oRU7jj84OaYkoq4pZSIW71FcI6IsfyDqJ97JpgmChyzw7uttEtwO2aq9uIXJ6015fBVL9cGgfgATdULB_5kxbbeaybvnEReBgPjDq6SIhTK4KoCZEF5rk9vdtSpmWiFSFZjDknBYzXUaqiKWsJNFqYK7')"></div>
+<div class="absolute top-md left-md">
+<span class="bg-primary-container text-on-primary-fixed px-sm py-xs font-label-md text-label-md tracking-wider">FEATURED GUIDE</span>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col justify-center space-y-md md:pl-lg">
+<h2 class="font-headline-lg text-display-lg text-primary leading-tight">Signature Pour Over</h2>
+<div class="flex gap-md border-y border-outline-variant/30 py-sm">
+<span class="font-label-md text-label-md text-secondary"><span class="material-symbols-outlined text-[18px] mr-1">signal_cellular_alt</span> Beginner</span>
+<span class="font-label-md text-label-md text-secondary"><span class="material-symbols-outlined text-[18px] mr-1">schedule</span> 4 mins</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Discover the nuances of our signature technique. This guide breaks down the precise water temperature, bloom time, and agitation required to unlock vibrant floral notes.
+                </p>
+<div class="space-y-sm">
+<div class="flex items-start gap-sm">
+<span class="font-headline-md text-primary opacity-30 italic">01.</span>
+<p class="font-body-md text-body-md">Precision grind: 22g of medium-fine beans.</p>
+</div>
+<div class="flex items-start gap-sm">
+<span class="font-headline-md text-primary opacity-30 italic">02.</span>
+<p class="font-body-md text-body-md">The Bloom: 45g pour for 30 seconds.</p>
+</div>
+<div class="flex items-start gap-sm">
+<span class="font-headline-md text-primary opacity-30 italic">03.</span>
+<p class="font-body-md text-body-md">The Pulse: Three consistent 100g concentric pours.</p>
+</div>
+</div>
+<button class="mt-md flex items-center gap-sm font-label-md text-label-md text-primary group">
+                    VIEW FULL GUIDE 
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Editorial Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl">
+<!-- Card 1 -->
+<article class="brew-card-hover flex flex-col group">
+<div class="aspect-square mb-md overflow-hidden bg-surface-container-low border border-outline-variant/20">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A top-down minimal shot of a white Hario V60 ceramic dripper on a clear glass server. The coffee is being poured in a thin stream. The aesthetic is extremely clean, light-mode, with soft shadows and a warm cream background that matches the brand's sophisticated palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpvDgXCFIQ5VtNr0AIyWhfiSGq64EwPziaNOogVcmPZZadsL3YA-GNpjvUcNpT88UB8BjDoGBewEo-6lfeNwawZz3gvYsddxRy0Zn9JOn073RL1IHnZpF0CJJq2AUj3iOhJHHeKk33ZvozgnO48iaj2wt8v2WghLk9GlEhxWurP0-gI8GOfk_OvqP47p9X_grLa6CIdrNSnFtJ0lgwgc2EBEG8K3bZQo26em7EZU-b-S-8zyBjHXz2AOYUOgrxuhOGAqFjlLndDXKp')"></div>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-caption text-secondary tracking-widest uppercase">Technique</span>
+<span class="font-label-md text-caption bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">Beginner</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">The Perfect V60</h3>
+<div class="flex items-center gap-xs text-on-surface-variant font-caption text-caption mb-sm">
+<span class="material-symbols-outlined text-[16px]">timer</span> 4 mins • <span class="material-symbols-outlined text-[16px]">coffee</span> 350ml
+                    </div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Mastering the classic cone dripper for a bright, clean cup of coffee every morning.</p>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="brew-card-hover flex flex-col group">
+<div class="aspect-square mb-md overflow-hidden bg-surface-container-low border border-outline-variant/20">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A detailed shot of a polished stainless steel French Press with a wooden handle. The coffee grounds are visible through the glass as the plunger is being slowly pressed down. The lighting is cinematic, moody but bright, emphasizing the tactile quality of the materials and the richness of the brew." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDykUmMdvIi7mSFvNE-VUHLRv-z6pjmkc10qbROgwqWLh8Wf2-SLu9yl3LHlysa-_T1lGERxbPyJzDEe0dzN6g0_HLM5HECFR1PCgV_sMuj3aDoYeZI_nT_RmTTX0r9J1V_0zJ-0NC_cqKcL9iz7NXczZcL4aq8xtPWvtSoVPbqrnJxn0uvLqofRj12lwLSn755tPs-rKh665s8L9BivTndYET2fdKRs6Cx6X3MZ-a7b9ezLvGA_o30X1XWDZnBmiPBBnEqfM6SEsTf')"></div>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-caption text-secondary tracking-widest uppercase">Body</span>
+<span class="font-label-md text-caption bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">Intermediate</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">French Press Immersion</h3>
+<div class="flex items-center gap-xs text-on-surface-variant font-caption text-caption mb-sm">
+<span class="material-symbols-outlined text-[16px]">timer</span> 8 mins • <span class="material-symbols-outlined text-[16px]">coffee</span> 500ml
+                    </div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">The secret to a sediment-free, full-bodied press using the Hoffman method.</p>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="brew-card-hover flex flex-col group">
+<div class="aspect-square mb-md overflow-hidden bg-surface-container-low border border-outline-variant/20">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A contemporary, architectural shot of an Aeropress Go setup outdoors on a textured rock surface. A small, elegant camping kettle is beside it. The lighting is crisp morning sun, creating sharp, clean shadows. The color palette is earthy and refined, focusing on sophisticated utility." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZUm3XCt3Er3P3FvLph5ZdmLXxTTa0MrR6EzRDr4WPsIxaVnlnQcKiRhDXNZXHr-LH6cresWNqiB7PJ6NHMmYZk1mtFwBfOKNJC1dYLXc0xaBMxKeMmUTbO7jlFekktLYgv9aOzNszy_iiqw2LoXCnb3iTKdw50SKEVWtGuoVeVy7I9yRpF5La8bVY_mmsmOAI-qjTkXq-b_ka_empULJHH_sIaDTL-jAMnEmWhQq_dHXet-uNmuBGBSNEHl-YeXNhCU3tXtk8NOgn')"></div>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-caption text-secondary tracking-widest uppercase">Travel</span>
+<span class="font-label-md text-caption bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">Beginner</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Inverted Aeropress</h3>
+<div class="flex items-center gap-xs text-on-surface-variant font-caption text-caption mb-sm">
+<span class="material-symbols-outlined text-[16px]">timer</span> 2 mins • <span class="material-symbols-outlined text-[16px]">coffee</span> 200ml
+                    </div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A versatile, robust brew method designed for consistency and intense sweetness.</p>
+</div>
+</article>
+</section>
+<!-- Newsletter / CTA Section -->
+<section class="mt-xl py-xl px-lg bg-primary-container text-on-primary flex flex-col md:flex-row items-center justify-between gap-lg">
+<div class="max-w-xl text-center md:text-left">
+<h3 class="font-headline-lg text-headline-lg text-primary-fixed mb-sm">Deepen Your Knowledge</h3>
+<p class="font-body-md text-body-md text-on-primary-container">Join our Journal for monthly deep-dives into bean origins, roasting chemistry, and exclusive early access to rare harvests.</p>
+</div>
+<div class="flex w-full md:w-auto gap-xs">
+<input class="bg-surface/10 border-b border-primary-fixed text-primary-fixed placeholder:text-primary-fixed/50 px-md py-sm focus:outline-none focus:bg-surface/20 transition-all flex-grow min-w-[240px]" placeholder="Your email" type="email"/>
+<button class="bg-primary-fixed text-on-primary-fixed px-lg py-sm font-label-md text-label-md hover:opacity-90 transition-all">Join</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl bg-surface-container dark:bg-inverse-surface border-t border-outline-variant/10">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="space-y-md">
+<div class="font-display-lg text-headline-md text-primary dark:text-primary-fixed">Crema &amp; Co.</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80 max-w-xs">
+                    Artisanal roasters dedicated to the quiet luxury of a perfect cup. 
+                </p>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim uppercase tracking-widest mb-xs">Shop</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors transition-all duration-200" href="#">Wholesale</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors transition-all duration-200" href="#">Subscription</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors transition-all duration-200" href="#">Equipment</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim uppercase tracking-widest mb-xs">Explore</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors transition-all duration-200" href="#">Journal</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors transition-all duration-200" href="#">Sustainability</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors transition-all duration-200" href="#">Our Story</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim uppercase tracking-widest mb-xs">Support</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors transition-all duration-200" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors transition-all duration-200" href="#">Shipping &amp; Returns</a>
+<div class="flex gap-md pt-sm">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70 transition-opacity">language</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70 transition-opacity">shopping_basket</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70 transition-opacity">share</span>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-xl pt-lg border-t border-outline-variant/10 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60">
+                © 2024 Crema &amp; Co. Artisanal Roasters. All rights reserved.
+            </p>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for the filter buttons
+        document.querySelectorAll('button.font-label-md').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(this.innerText !== 'Order Now' && this.innerText !== 'Join') {
+                    document.querySelectorAll('button.font-label-md').forEach(b => {
+                        b.classList.remove('border-b-2', 'border-primary', 'text-primary');
+                        if (!b.classList.contains('bg-primary')) {
+                             b.classList.add('text-on-surface-variant');
+                        }
+                    });
+                    this.classList.add('border-b-2', 'border-primary', 'text-primary');
+                    this.classList.remove('text-on-surface-variant');
+                }
+            });
+        });
+    </script>
+</body></html>
