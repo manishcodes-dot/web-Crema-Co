@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import axios from 'axios';
+import { animateFlyToCart } from '../utils/cartAnimation';
+
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
@@ -110,13 +112,15 @@ export default function Menu() {
   const handleAddToBag = (e, product) => {
     e.preventDefault();
     e.stopPropagation();
-    addItem({
-      _id: product._id,
-      name: product.name,
-      price: product.price,
-      image: product.image,
-      size: 'standard',
-      quantity: 1
+    animateFlyToCart(e, product.image, () => {
+      addItem({
+        _id: product._id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        size: 'standard',
+        quantity: 1
+      });
     });
   };
 

@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import axios from 'axios';
 import './ProductDetail.css';
+import { animateFlyToCart } from '../utils/cartAnimation';
+
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
@@ -109,23 +111,26 @@ export default function ProductDetail() {
     return 'Extra Sweet (100%)';
   };
 
-  const handleAdd = () => {
+  const handleAdd = (e) => {
     if (!product) return;
-    const finalPrice = product.price + (extraEspresso ? 1.50 : 0);
-    addItem({
-      _id: product._id,
-      name: product.name,
-      price: finalPrice,
-      image: product.image,
-      size: 'standard',
-      quantity: 1
-    }, {
-      milkOption: milk,
-      sweetness: getSweetnessText(sweetnessVal),
-      extraEspresso: extraEspresso
-    });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
+
+    const finalPrice = product.price + (extraEspresso ? 1.50 : 0);
+    animateFlyToCart(e, product.image, () => {
+      addItem({
+        _id: product._id,
+        name: product.name,
+        price: finalPrice,
+        image: product.image,
+        size: 'standard',
+        quantity: 1
+      }, {
+        milkOption: milk,
+        sweetness: getSweetnessText(sweetnessVal),
+        extraEspresso: extraEspresso
+      });
+    });
   };
 
   if (!product) {

@@ -4,12 +4,21 @@ import { useCart } from '../context/CartContext';
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isBouncing, setIsBouncing] = useState(false);
   const { itemCount } = useCart();
   const location = useLocation();
 
   useEffect(() => {
     setMobileOpen(false);
   }, [location]);
+
+  useEffect(() => {
+    if (itemCount > 0) {
+      setIsBouncing(true);
+      const timer = setTimeout(() => setIsBouncing(false), 500);
+      return () => clearTimeout(timer);
+    }
+  }, [itemCount]);
 
   return (
     <nav className="w-full top-0 sticky z-50 bg-surface/85 backdrop-blur-md border-b border-outline-variant/30 duration-300 ease-in-out">
@@ -117,7 +126,9 @@ export default function Navbar() {
         <div className="flex-1 flex justify-end items-center gap-sm">
           <Link 
             to="/checkout" 
-            className="relative p-2 cursor-pointer transition-all duration-200 text-primary hover:opacity-85 flex items-center justify-center" 
+            className={`relative p-2 cursor-pointer transition-all duration-200 text-primary hover:opacity-85 flex items-center justify-center ${
+              isBouncing ? 'cart-bounce-active' : ''
+            }`} 
             id="nav-cart"
           >
             <span className="material-symbols-outlined text-[24px]">shopping_bag</span>
